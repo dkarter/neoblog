@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  // Change code hightlight theme here.
+  // Change code highlight theme here.
   markdown: {
     shikiConfig: {
       theme: "dark-plus", // https://shiki.style/themes
