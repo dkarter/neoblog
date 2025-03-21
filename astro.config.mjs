@@ -17,7 +17,8 @@ export default defineConfig({
       defaultColor: false,
     },
   },
-  site: "https://example.com",
+  site: "https://dkarter.github.io",
+  base: "neoblog",
   integrations: [mdx(), sitemap(), react()],
 
   vite: {
