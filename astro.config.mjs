@@ -18,7 +18,6 @@ export default defineConfig({
     },
   },
   site: "https://dkarter.github.io",
-  base: "neoblog",
   integrations: [mdx(), sitemap(), react()],
 
   vite: {
