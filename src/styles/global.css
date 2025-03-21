@@ -8,12 +8,18 @@ https://tailwindcss.com/docs/colors#default-color-palette-reference */
 @theme {
   --font-sans: "Saira Variable", sans-serif;
   /* Brand Colors*/
-  --color-brand-50: oklch(0.984 0.019 200.873);
-  --color-brand-100: oklch(0.956 0.045 203.388);
-  --color-brand-200: oklch(0.917 0.08 205.041);
-  --color-brand-300: oklch(0.865 0.127 207.078);
-  --color-brand-400: oklch(0.789 0.154 211.53);
-  --color-brand-500: oklch(0.715 0.143 215.221);
+  --color-brand-50: #D6CE93;
+  /*  oklch(0.984 0.019 200.873); */
+  --color-brand-100: #EFEBCE;
+  /* oklch(0.956 0.045 203.388); */
+  --color-brand-200: #D8A48F;
+  /* oklch(0.917 0.08 205.041); */
+  --color-brand-300: #A3A380;
+  /* oklch(0.865 0.127 207.078); */
+  --color-brand-400: #BB8588;
+  /* oklch(0.789 0.154 211.53); */
+  --color-brand-500: #A3A380;
+  /* oklch(0.715 0.143 215.221); */
   --color-brand-600: oklch(0.609 0.126 221.723);
   --color-brand-700: oklch(0.52 0.105 223.128);
   --color-brand-800: oklch(0.45 0.085 224.283);
@@ -44,6 +50,7 @@ body {
 ::selection {
   @apply bg-brand-600 text-neutral-50;
 }
+
 /* Apply focus-visible to a and buttons */
 a:focus-visible,
 button:focus-visible {
@@ -56,25 +63,30 @@ button:focus-visible {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .animate-fade-in {
   animation-name: fadeIn;
   animation-duration: var(--fade-in-duration, 0.3s);
   animation-timing-function: ease-in;
 }
+
 @keyframes scale-and-fade-in {
   0% {
     opacity: 0;
     transform: scale(0);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 .animate-scale-and-fade-in {
   animation-name: scale-and-fade-in;
   animation-duration: 0.5s;
@@ -87,6 +99,7 @@ button:focus-visible {
   0% {
     transform: scaleY(0);
   }
+
   100% {
     transform: scaleY(1);
   }
@@ -101,11 +114,13 @@ button:focus-visible {
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
+
 /* Menu Buttons Animation */
 @keyframes scale-x {
   0% {
     transform: scaleX(0);
   }
+
   100% {
     transform: scaleX(1);
   }
@@ -120,6 +135,7 @@ button:focus-visible {
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
+
 /* Animations for the homepage and 404 pages ends here */
 
 /* Scrollbar Styles */
@@ -134,16 +150,19 @@ button:focus-visible {
   width: 15px;
   height: 15px;
 }
+
 @media screen and (max-width: 600px) {
   *::-webkit-scrollbar {
     width: 9px;
     height: 9px;
   }
 }
+
 *::-webkit-scrollbar-track {
   background: var(--color-neutral-900);
   border: 3px solid var(--color-neutral-700);
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: var(--color-neutral-900);
   border-radius: 14px;
