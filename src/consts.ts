@@ -1,4 +1,6 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { SiX, SiGithub } from "@icons-pack/react-simple-icons";
+
 // Picture is being used as logo. Its grayscaled at homepage to match with the background glow.
 // Same can be created with different colors using AI tools. Also logo can be different ^^
 export const LOGO_URL = "/picture.jpg";
@@ -12,12 +14,12 @@ export const SOCIALS = [
   {
     name: "Github",
     href: "https://github.com/dkarter",
-    icon: Github,
+    icon: SiGithub,
   },
   {
-    name: "Twitter",
+    name: "X",
     href: "https://x.com/dorian_escplan",
-    icon: Twitter,
+    icon: SiX,
   },
   {
     name: "LinkedIn",

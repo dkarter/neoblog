@@ -60,6 +60,9 @@ importers:
         specifier: ^4.0.6
         version: 4.0.15
     devDependencies:
+      '@icons-pack/react-simple-icons':
+        specifier: ^12.3.0
+        version: 12.3.0(react@19.0.0)
       '@tailwindcss/typography':
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@4.0.15)
@@ -379,6 +382,11 @@ packages:
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
       react-dom: ^18 || ^19 || ^19.0.0-rc
+
+  '@icons-pack/react-simple-icons@12.3.0':
+    resolution: {integrity: sha512-71KKdd2tg36Pctg5pQTAmPRIdFrtxsLccoSexkZLztn46eV6Ek6ov69o0Ph4t4ZPs6n4+Fw4sBnIzEsKssnXxg==}
+    peerDependencies:
+      react: ^16.13 || ^17 || ^18 || ^19
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2476,6 +2484,10 @@ snapshots:
       '@tanstack/react-virtual': 3.13.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
+
+  '@icons-pack/react-simple-icons@12.3.0(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

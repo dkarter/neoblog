@@ -1,5 +1,6 @@
 ---
-import { Facebook, Linkedin, Mail, Twitter } from "lucide-react";
+import { Linkedin, Mail, Twitter } from "lucide-react";
+import { SiX } from "@icons-pack/react-simple-icons";
 
 const URL = Astro.url;
 
@@ -7,14 +8,8 @@ const shareOptions = [
   {
     name: "X",
     href: "https://twitter.com/intent/tweet?url=",
-    icon: Twitter,
+    icon: SiX,
     title: "Tweet or X?",
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/sharer.php?u=",
-    icon: Facebook,
-    title: "Share on Facebook",
   },
   {
     name: "LinkedIn",
