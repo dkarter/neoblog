@@ -1,0 +1,54 @@
+---
+import { Facebook, Linkedin, Mail, Twitter } from "lucide-react";
+
+const URL = Astro.url;
+
+const shareOptions = [
+  {
+    name: "X",
+    href: "https://twitter.com/intent/tweet?url=",
+    icon: Twitter,
+    title: "Tweet or X?",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/sharer.php?u=",
+    icon: Facebook,
+    title: "Share on Facebook",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/sharing/share-offsite/?url=",
+    icon: Linkedin,
+    title: "Share at LinkedIn",
+  },
+  {
+    name: "Mail",
+    href: "mailto:?subject=See%20this%20post&body=",
+    icon: Mail,
+    title: "Share via email",
+  },
+];
+---
+
+<div class="flex items-center md:mt-3">
+  <span class="mr-3.5 text-lg font-semibold tracking-tight text-neutral-200"
+    >Share?
+  </span>
+  <div class="flex flex-wrap gap-2 py-6 md:py-2">
+    {
+      shareOptions.map((social) => (
+        <a
+          href={`${social.href + URL}`}
+          class="hover:text-brand-500 rounded-lg border border-neutral-800/60 bg-neutral-900 p-2.5 text-neutral-100 transition-colors duration-300"
+          target="_blank"
+          rel="noreferrer"
+          title={social.title}
+        >
+          <social.icon className="size-5" />
+          <span class="sr-only">{social.title}</span>
+        </a>
+      ))
+    }
+  </div>
+</div>

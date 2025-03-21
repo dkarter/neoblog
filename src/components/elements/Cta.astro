@@ -1,0 +1,23 @@
+---
+import { SOCIALS } from "@/consts";
+// Define socials at consts file. Right click on SOCIALS and select "Go to Definition"
+---
+
+<div
+  class="my-12 flex max-w-xl flex-col items-center justify-center gap-x-4 gap-y-3 rounded-lg border-x border-neutral-700/50 bg-gradient-to-r from-neutral-900 via-transparent to-neutral-900 p-5 py-6 shadow-lg sm:mx-auto sm:my-14 sm:flex-row sm:gap-x-6"
+>
+  <p class="text-xl font-semibold text-neutral-300">Let&apos;s work together</p>
+  <div class="flex gap-x-4 sm:gap-x-3">
+    {
+      SOCIALS.map((social: any) => (
+        <a
+          class="text-brand-500 hover:text-brand-400 h-6 w-6 origin-top cursor-pointer transition-colors duration-300"
+          href={social.href}
+          aria-label={social.name}
+        >
+          <social.icon />
+        </a>
+      ))
+    }
+  </div>
+</div>

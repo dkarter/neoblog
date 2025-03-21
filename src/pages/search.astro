@@ -1,0 +1,17 @@
+---
+import PageHeading from "@/components/elements/PageHeading.astro";
+import SearchBox from "@/components/search/SearchBox.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+---
+
+<PageLayout
+  title={"Search & Discover"}
+  description={"Find the things I wrote about or can help with"}
+>
+  {/* Heading */}
+  <PageHeading
+    heading={"Search & Discover"}
+    paragraph={"Find the things I wrote about or can help with."}
+  />
+  <SearchBox />
+</PageLayout>

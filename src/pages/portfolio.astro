@@ -1,0 +1,188 @@
+---
+import Link from "@/components/elements/Link.astro";
+import PageHeading from "@/components/elements/PageHeading.astro";
+import Pill from "@/components/elements/Pill.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import {
+  CodeIcon,
+  Database,
+  ExternalLinkIcon,
+  InfoIcon,
+  Layout,
+  Palette,
+  Server,
+  Smartphone,
+} from "lucide-react";
+const PROJECTS = [
+  {
+    imgSrc: "/projects/1.webp",
+    title: "Astrosas, Astro Sass Template 💯",
+    description:
+      "Built with TailwindCSS and React/RadixUI. Dark design with brand theme colors. Smooth and fast transitions across clutter-free pages, perfect for creating a stylish and modern web presence.",
+    previewLink: "https://astrosas.netlify.app/",
+    infoLink: "https://astro.build/themes/details/astrosas/",
+  },
+  {
+    imgSrc: "/projects/2.webp",
+    title: "Astrov, Astro Personal Portfolio Blog Template 🌟",
+    description:
+      " Built with TailwindCSS and HeadlessUI. Dark design with brand theme colors. Smooth and fast transitions across clutter-free pages, perfect for creating a stylish and modern web presence.",
+    previewLink: "https://astrov-template.vercel.app/",
+    infoLink: "https://astrov-template.vercel.app/",
+  },
+];
+const SKILLS = [
+  {
+    title: "Frontend Development",
+    description:
+      "Building responsive and accessible user interfaces with modern frameworks and libraries.",
+    icon: Layout,
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    title: "Backend Development",
+    description:
+      "Creating robust server-side applications and APIs to power web applications.",
+    icon: Server,
+    technologies: [
+      "Node.js",
+      "Express",
+      "Python",
+      "Django",
+      "Java",
+      "Spring Boot",
+    ],
+  },
+  {
+    title: "Database Management",
+    description:
+      "Designing and optimizing database schemas for efficient data storage and retrieval.",
+    icon: Database,
+    technologies: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"],
+  },
+  {
+    title: "Mobile Development",
+    description:
+      "Building cross-platform mobile applications with modern frameworks.",
+    icon: Smartphone,
+    technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "Creating intuitive and visually appealing user interfaces and experiences.",
+    icon: Palette,
+    technologies: ["Figma", "Adobe XD", "Sketch", "Photoshop", "Illustrator"],
+  },
+  {
+    title: "DevOps",
+    description:
+      "Implementing CI/CD pipelines and managing cloud infrastructure.",
+    icon: CodeIcon,
+    technologies: [
+      "Git",
+      "GitHub Actions",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Vercel",
+      "Netlify",
+    ],
+  },
+];
+---
+
+<PageLayout title={"Portfolio"} description={"Things, I'm proud of!"}>
+  <PageHeading
+    heading={"My Accomplishments"}
+    paragraph={"Check out some highlights from my portfolio showcasing my skills."}
+  />
+  {/* Projects */}
+  <div class="w-full space-y-6 pb-10">
+    {
+      PROJECTS.map((p, index) => (
+        <div class="rounded-lg border border-neutral-800/60 bg-neutral-900/50 transition-colors duration-300 hover:bg-neutral-900/70">
+          <Image
+            alt=""
+            loading={index === 0 ? "eager" : "lazy"}
+            width="576"
+            height="321"
+            class="rounded-t-lg"
+            src={p.imgSrc}
+          />
+          <div class="space mt-2 mb-1 p-4">
+            <>
+              <h2 class="text-xl font-semibold text-balance text-neutral-200">
+                {p.title}
+              </h2>
+              <p class="mt-2 line-clamp-3 text-neutral-400">{p.description}</p>
+            </>
+            <div class="mt-3.5 flex items-center gap-x-4">
+              <Link
+                style="primary"
+                class="py-2"
+                href={p.previewLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Preview <ExternalLinkIcon className="size-4.5" />
+              </Link>
+              <Link
+                style="neutral"
+                class="py-3"
+                href={p.infoLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                More Info <InfoIcon className="size-4.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <PageHeading
+    heading={"My Skills"}
+    paragraph={"Explore the expertise and abilities that define my work and passion."}
+  />
+  {/* Skills */}
+  <div class="w-full space-y-4">
+    {
+      SKILLS.map((skill) => (
+        <div class="rounded-lg border border-neutral-800/60 bg-neutral-900/50 p-4 transition-colors duration-300 hover:bg-neutral-900/70">
+          <div class="">
+            <div class="flex items-center gap-x-2">
+              <span class="rounded-full border border-neutral-800/60 bg-neutral-950 p-3">
+                <skill.icon className="size-5 shrink-0" />
+              </span>
+              <h2 class="text-xl font-semibold text-balance text-neutral-200">
+                {skill.title}
+              </h2>
+            </div>
+            <p class="mt-2 text-balance text-neutral-400">
+              {skill.description}
+            </p>
+          </div>
+          <div>
+            <div class="mt-3 flex max-w-md flex-wrap gap-2">
+              {skill.technologies.map((tech) => (
+                <Pill>{tech}</Pill>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</PageLayout>

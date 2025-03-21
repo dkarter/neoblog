@@ -1,0 +1,153 @@
+---
+import LatestPosts from "@/components/blog/LatestPosts.astro";
+import Prose from "@/components/blog/Prose.astro";
+import RelatedPosts from "@/components/blog/RelatedPosts.astro";
+import Divider from "@/components/elements/Divider.astro";
+import Pill from "@/components/elements/Pill.astro";
+import Share from "@/components/Share.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { render } from "astro:content";
+import { getCollection, getEntries } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { Calendar } from "lucide-react";
+
+{
+  /* Individual Blog Post Pages */
+}
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts", ({ data }) => {
+    // Only include non-draft posts in production
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  });
+
+  return allPosts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, allPosts },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<"posts">;
+  allPosts: CollectionEntry<"posts">[];
+};
+
+const { post, allPosts } = Astro.props;
+
+// Find index of the current post
+const currentIndex = allPosts.findIndex((p) => p.id === post.id);
+const prevPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+const nextPost =
+  currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+
+// Fetch related posts
+const relatedPosts = post.data.relatedPosts
+  ? await getEntries(post.data.relatedPosts).then((entries) =>
+      entries.filter((entry) =>
+        import.meta.env.PROD ? !entry.data.isDraft : true
+      )
+    )
+  : [];
+const { Content } = await render(post);
+---
+
+<PageLayout
+  fullwidth
+  title={post.data.title}
+  description={post.data.description}
+>
+  <div class="relative mx-auto max-w-xl">
+    {/* Title and Description */}
+    <div class="my-10 max-w-md sm:mx-auto sm:text-center">
+      <h1 class="text-brand-50 text-3xl font-semibold sm:text-4xl sm:font-bold">
+        {post.data.title}
+      </h1>
+      <p class="mt-3 text-base text-neutral-400 sm:mt-4 sm:text-lg">
+        {post.data.description}
+      </p>
+      {/* Publish Date */}
+      <div class="mt-5 w-fit sm:mx-auto sm:mt-6">
+        <Pill roundedFull Icon={Calendar}>
+          <time
+            class="select-none"
+            datetime={post.data.publishDate.toISOString()}
+            >{
+              post.data.publishDate.toLocaleDateString(undefined, {
+                dateStyle: "medium",
+                timeZone: "UTC",
+              })
+            }</time
+          ></Pill
+        >
+      </div>
+      {/* Divider */}
+      <Divider />
+    </div>
+    <a
+      href="/blog"
+      class="text-brand-500 mb-6 block w-fit transition-colors duration-300"
+      >&larr; Back to blog</a
+    >
+    <article class="mx-auto mb-8 w-full">
+      {/* Tags */}
+      <div class="mb-4 flex gap-x-2 text-sm text-neutral-400">
+        {
+          post.data.tags.map((tag) => (
+            <a
+              class="hover:text-brand-500 rounded-lg border border-neutral-800/40 bg-neutral-900/50 px-2 py-1 capitalize transition-colors duration-300"
+              href={`/blog/${tag}`}
+            >
+              #{tag}
+            </a>
+          ))
+        }
+      </div>
+      {/* Markdown */}
+      <Prose>
+        <Content />
+      </Prose>
+    </article>
+    <Divider />
+    <Share />
+    <Divider />
+    {/* Previous and Next Posts */}
+    <div
+      class="mx-auto mt-4 flex flex-col justify-center gap-4 md:mt-6 md:flex-row"
+    >
+      {
+        prevPost && (
+          <div
+            class={`relative w-full max-w-xl rounded-lg border border-neutral-800/60 bg-neutral-900/50 p-3 text-neutral-200 transition-colors duration-300 hover:bg-neutral-900/70 ${!nextPost ? "text-left" : "md:text-right"}`}
+          >
+            <p class="mb-1 text-neutral-400">&larr; Previous Post</p>
+            <a
+              href={`/blog/${prevPost.id}`}
+              class="hover:text-brand-500 transition-colors duration-300"
+            >
+              <span class="absolute inset-0" />
+              {prevPost.data.title}
+            </a>
+          </div>
+        )
+      }
+      {
+        nextPost && (
+          <div
+            class={`relative w-full max-w-xl rounded-lg border border-neutral-800/60 bg-neutral-900/50 p-3 text-neutral-200 transition-colors duration-300 hover:bg-neutral-900/70 ${!prevPost ? "text-right" : "text-left"}`}
+          >
+            <p class="mb-1 text-neutral-400">Next Post &rarr;</p>
+            <a
+              href={`/blog/${nextPost.id}`}
+              class="hover:text-brand-500 transition-colors duration-300"
+            >
+              <span class="absolute inset-0" />
+              {nextPost.data.title}
+            </a>
+          </div>
+        )
+      }
+    </div>
+    <RelatedPosts data={relatedPosts} />
+    <LatestPosts maxVisible={3} data={allPosts} />
+  </div>
+</PageLayout>

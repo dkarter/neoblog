@@ -1,0 +1,42 @@
+---
+import Footer from "@/components/Footer.astro";
+import RootLayout from "@/layouts/RootLayout.astro";
+---
+
+<RootLayout title="404" description="Page Not Found">
+  <main
+    class="relative flex h-[100dvh] w-[100dvw] items-center justify-center overflow-hidden"
+  >
+    <div class="group relative">
+      {/* Bg Glow */}
+      <div
+        class="animate-fade-in group-hover:bg-brand-300/30 absolute inset-0 z-0 scale-150 rounded-full bg-neutral-100/10 blur-2xl duration-1000 group-hover:transition-colors group-hover:duration-1000"
+        style={{ "--fade-in-duration": "2s" }}
+      >
+      </div>
+      {/* Inner Container */}
+      <div
+        class="animate-scale-and-fade-in relative z-10 flex h-fit w-fit flex-col text-center"
+      >
+        <h1
+          class="group-hover:text-brand-500 text-center text-7xl font-semibold text-neutral-300 drop-shadow-md transition-colors duration-1000 select-none md:text-9xl"
+        >
+          404
+        </h1>
+        <p class="font-medium tracking-tight text-neutral-400 md:text-lg">
+          You shouldn&apos;t be here.
+          <br />
+          Please{" "}
+          <a
+            onclick="history.back()"
+            class="hover:text-brand-500 cursor-pointer text-neutral-300 transition-colors duration-300"
+          >
+            go back
+          </a>{" "}
+          and try again.
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</RootLayout>

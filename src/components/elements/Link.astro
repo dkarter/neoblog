@@ -1,0 +1,67 @@
+---
+import { cn } from "@/lib/utils";
+
+{
+  /* Can be used as <a> or <button> with submit prop. Use the id prop for attaching onclick functions. */
+}
+interface Props {
+  href?: string;
+  target?: string;
+  rel?: string;
+  id?: string;
+  title?: string;
+  submit?: boolean; // Button or link
+  block?: boolean; // full-width or fit
+  style: "primary" | "neutral" | "muted";
+  class?: string;
+}
+
+const {
+  href,
+  target,
+  rel,
+  id,
+  title,
+  submit,
+  block,
+  style = "primary",
+  class: className,
+} = Astro.props;
+
+const styles = {
+  primary:
+    "bg-brand-600 text-neutral-100 hover:bg-brand-500 focus:bg-brand-500 px-4 py-2",
+  neutral:
+    "border border-neutral-800/40 bg-neutral-950 text-neutral-300 hover:bg-neutral-900 focus:bg-neutral-900 hover:text-neutral-100 px-4 py-3",
+  muted: "text-neutral-200 hover:text-brand-600 focus:text-brand-600",
+};
+
+const sharedClasses = [
+  "rounded-lg font-semibold transition-colors gap-x-2 text-sm duration-300 focus:outline-0 focus:ring-0 flex items-center justify-center",
+  block ? "w-full" : "w-fit",
+];
+---
+
+{
+  submit ? (
+    <button
+      type="submit"
+      id={id}
+      aria-label={title}
+      class={cn(sharedClasses, styles[style], className)}
+    >
+      <slot />
+    </button>
+  ) : (
+    <a
+      href={href}
+      target={target}
+      rel={rel}
+      id={id}
+      aria-label={title}
+      class={cn(sharedClasses, styles[style], className)}
+    >
+      <slot />
+    </a>
+  )
+}

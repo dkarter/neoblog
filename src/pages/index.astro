@@ -1,0 +1,99 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import { SITE_NAME, SOCIALS, LOGO_URL } from "@/consts";
+---
+
+<RootLayout title="Astrov" description="Simple and Smooth AstroJs Template">
+  <main
+    class="relative flex h-[100dvh] w-[100dvw] items-center justify-center overflow-hidden"
+    id="home-page"
+  >
+    <div class="group relative">
+      {/* Bg Glow */}
+      <div
+        class="animate-fade-in bg-brand-300/30 group-hover:bg-brand-300/30 absolute inset-0 z-0 scale-125 rounded-full blur-2xl duration-1000 group-hover:transition-colors group-hover:duration-1000 sm:bg-neutral-100/10"
+        style={{ "--fade-in-duration": "2s" }}
+      >
+      </div>
+      {/* Inner Container */}
+      <div
+        class="animate-scale-and-fade-in relative z-10 flex h-fit w-fit flex-col overflow-hidden rounded-md border border-neutral-950/70 md:flex-row"
+      >
+        {/* Picture and socials */}
+        <div
+          class="group/social flex w-fit flex-col divide-y divide-neutral-950 border-neutral-950 max-md:border-b-[1px] md:border-r-[1px]"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              alt="#"
+              src={LOGO_URL}
+              class="h-36 w-36 scale-105 self-stretch transition-all duration-1000 group-hover/social:scale-110 sm:grayscale sm:group-hover:grayscale-0"
+            />
+            <span
+              class="border-brand-300/10 text-brand-500 pointer-events-none absolute bottom-0.5 left-1/2 -translate-x-1/2 translate-y-12 rounded-full border bg-neutral-900/90 px-3 py-1 text-sm whitespace-nowrap transition-transform duration-300 group-hover/social:translate-y-0"
+              >{SITE_NAME}</span
+            >
+          </div>
+          <div class="flex divide-x divide-neutral-950/70">
+            {
+              SOCIALS.map((social, index) => (
+                <a
+                  href={social.href}
+                  aria-label={social.name}
+                  class="animate-scale-y"
+                  style={{ "--delay": `${index * 0.125}s` }}
+                >
+                  <span class="hover:text-brand-500/90 block h-9 w-9 cursor-pointer bg-neutral-900 p-2 text-neutral-400/80 transition-colors duration-300">
+                    <social.icon size={18} />
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        {/* Nav */}
+        <nav
+          class="flex flex-col border-none text-lg font-semibold text-neutral-500/80 md:text-xl"
+        >
+          <div
+            class="animate-scale-x relative flex h-full w-full cursor-pointer items-center justify-center border-b-2 border-neutral-950/50 bg-neutral-900 px-6 py-5 md:px-10 md:py-3"
+            style={{ "--nav-item-delay": `0.2s` }}
+          >
+            <a
+              href="/portfolio"
+              class="hover:text-brand-500 transition-colors duration-300"
+            >
+              <span class="absolute inset-0"></span>
+              PORTFOLIO
+            </a>
+          </div>
+          <div
+            class="animate-scale-x relative flex h-full w-full cursor-pointer items-center justify-center border-b-2 border-neutral-950/50 bg-neutral-900 px-6 py-5 md:px-10 md:py-3"
+            style={{ "--nav-item-delay": `0.25s` }}
+          >
+            <a
+              href="/blog"
+              class="hover:text-brand-500 transition-colors duration-300"
+            >
+              <span class="absolute inset-0"></span>
+              BLOG
+            </a>
+          </div>
+          <div
+            class="animate-scale-x relative flex h-full w-full cursor-pointer items-center justify-center bg-neutral-900 px-6 py-5 md:px-10 md:py-3"
+            style={{ "--nav-item-delay": `0.3s` }}
+          >
+            <a
+              href="/about"
+              class="hover:text-brand-500 transition-colors duration-300"
+            >
+              <span class="absolute inset-0"></span>
+              ABOUT
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </main>
+  <script></script>
+</RootLayout>

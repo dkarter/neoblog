@@ -1,0 +1,22 @@
+---
+import Header from "@/components/Header";
+import RootLayout from "./RootLayout.astro";
+import Cta from "@/components/elements/Cta.astro";
+import Footer from "@/components/Footer.astro";
+import ScrollToTopOrGoBack from "@/components/ScrollToTopOrGoBack.astro";
+const { title, description, image, fullwidth, noCta } = Astro.props;
+---
+
+<RootLayout title={title} description={description} image={image}>
+  <Header client:load />
+  <main
+    class={` ${
+      fullwidth ? "" : "mx-auto max-w-xl"
+    } px-4 pb-16 pt-20 md:pb-20 md:pt-24`}
+  >
+    <slot />
+    {!noCta && <Cta />}
+  </main>
+  <Footer transition:persist />
+  <ScrollToTopOrGoBack transition:persist />
+</RootLayout>

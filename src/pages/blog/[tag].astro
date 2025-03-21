@@ -1,0 +1,66 @@
+---
+import PostCard from "@/components/blog/PostCard.astro";
+import PageHeading from "@/components/elements/PageHeading.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+
+{
+  /* Individual Tag Pages */
+}
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts", ({ data }) => {
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  });
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+  const sortedByDatePosts = allPosts.sort((a, b) => {
+    const dateA = new Date(a.data.publishDate).getTime();
+    const dateB = new Date(b.data.publishDate).getTime();
+    return dateB - dateA;
+  });
+  return uniqueTags.map((tag) => {
+    const filteredPosts = sortedByDatePosts.filter((post) =>
+      post.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts, uniqueTags },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts, uniqueTags } = Astro.props;
+---
+
+<PageLayout
+  title={`Posts about ${tag}`}
+  description={`Discover all articles related to ${tag} tag.`}
+>
+  <PageHeading
+    noBottomMargin
+    heading={`#${tag}`}
+    paragraph={`Discover all articles related to #${tag}`}
+  />
+
+  <div class="mx-auto mt-6 grid justify-center gap-4 max-md:max-w-md lg:mt-12">
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+  {/* Tag Cloud */}
+  <div
+    class="mx-auto mt-10 flex max-w-lg flex-wrap justify-center gap-3 text-sm text-neutral-400 md:mt-12"
+  >
+    {
+      uniqueTags.map((tagItem) => (
+        <a
+          class="hover:text-brand-500 rounded-lg border border-neutral-800/40 bg-neutral-900/50 px-2 py-1 whitespace-nowrap capitalize transition-colors duration-300"
+          href={`/blog/${tagItem}`}
+        >
+          #{tagItem}
+        </a>
+      ))
+    }
+  </div>
+</PageLayout>

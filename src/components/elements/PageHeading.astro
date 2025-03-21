@@ -1,0 +1,27 @@
+---
+import Divider from "./Divider.astro";
+import Pill from "./Pill.astro";
+
+const { heading, paragraph, tags } = Astro.props;
+---
+
+<div class="my-10 max-w-md sm:mx-auto sm:text-center">
+  <h1 class="text-brand-50 text-3xl font-semibold sm:text-4xl sm:font-bold">
+    {heading}
+  </h1>
+  <p class="mt-3 text-base text-neutral-400 sm:mt-4 sm:text-lg">
+    {paragraph}
+  </p>
+  {/* Tags */}
+  {
+    tags && (
+      <div class="mt-5 flex w-fit flex-wrap gap-2 sm:mx-auto sm:mt-6 sm:justify-center">
+        {tags.map((i: any) => (
+          <Pill roundedFull>{i}</Pill>
+        ))}
+      </div>
+    )
+  }
+  {/* Divider */}
+  <Divider />
+</div>

@@ -1,0 +1,85 @@
+---
+import Blockquote from "@/components/elements/Blockquote.astro";
+import PageHeading from "@/components/elements/PageHeading.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { Cog, Flame, School } from "lucide-react";
+---
+
+<PageLayout title={"About me"} description={"Who is me?"}>
+  <PageHeading
+    heading={"My Path"}
+    paragraph={"Hey there! I'm Max Taun, I specialize in weaving digital elegance to bring your online world to life."}
+    tags={["ReactJs Sorcerer 🌈", "CSS Maestro 🌀", "Motion Choreographer 🔥"]}
+  />
+  <div class="mb-6 grid w-full gap-y-10">
+    {/* Education */}
+    <div>
+      <div class="flex items-center gap-x-2">
+        <School
+          className="text-brand-500 h-6 w-6 drop-shadow-[#06b6d4_1px_1px_12px]"
+        />
+        <h2 class="text-brand-500 text-xl font-medium">Education</h2>
+      </div>
+      <h3 class="text-brand-50 mt-4 font-medium">
+        Bachelor of Science in Computer Science
+      </h3>
+      <span class="text-neutral-500"> Tech University, 2013 - 2017 </span>
+      <p class="mt-2 max-w-md text-neutral-400">
+        I began my coding journey with a solid computer science education at
+        Tech University, laying the foundation for navigating the ever-evolving
+        tech landscape.
+      </p>
+    </div>
+    {/* Experiences */}
+    <div>
+      <div class="flex items-center gap-x-2">
+        <Cog
+          className="text-brand-500 h-6 w-6 drop-shadow-[#06b6d4_1px_1px_12px]"
+        />
+        <h2 class="text-brand-500 text-xl font-medium">Experiences</h2>
+      </div>
+      <div class="mt-4">
+        <h3 class="text-brand-50 font-medium">Frontend Developer</h3>
+        <span class="text-neutral-500"> WebSolutions Inc., 2017 - 2021 </span>
+        <p class="mt-2 max-w-md text-neutral-400">
+          Frontend Developer at WebSolutions Inc. - Translating design concepts
+          into functional, user-friendly websites, I&apos;ve honed ReactJS
+          skills in diverse projects.
+        </p>
+      </div>
+      <div class="mt-6">
+        <h3 class="text-brand-50 font-medium">UI/UX Designer</h3>
+        <span class="text-neutral-500">
+          CreativeDesign Studio, 2021 - ...
+        </span>
+        <p class="mt-2 max-w-md tracking-wide text-neutral-400">
+          UI/UX Designer at CreativeDesign Studio - Leveraging TailwindCSS, I
+          focused on creating responsive designs for an enhanced user
+          experience.
+        </p>
+      </div>
+    </div>
+    {/* Passion */}
+    <div>
+      <div class="flex items-center gap-x-2">
+        <Flame
+          className="text-brand-500 h-6 w-6 drop-shadow-[#06b6d4_1px_1px_12px]"
+        />
+        <h2 class="text-brand-500 text-xl font-medium">Passion</h2>
+      </div>
+      <h3 class="text-brand-50 mt-4 font-medium">
+        Continuous Learning and Community Engagement
+      </h3>
+      <p class="mt-2 max-w-md tracking-wide text-neutral-400">
+        Passion for Continuous Learning - Beyond work, I stay current with the
+        development community, fueling my passion for cutting-edge digital
+        solutions.
+      </p>
+    </div>
+    {/* Blockquote */}
+    <Blockquote
+      quote="I bring real-world skills, dedication, and a genuine love for creating impactful digital experiences. Let's collaborate and turn your ideas into reality!"
+      author="Max Taun"
+    />
+  </div>
+</PageLayout>

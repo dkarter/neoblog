@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Link from "../elements/Link.astro";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+const { isDraft, isFeatured, title, description, tags, publishDate } =
+  post.data;
+// publishDate is also accessible.
+---
+
+<article
+  class={`${isFeatured ? "border-brand-500/30" : " border-neutral-800/60"} relative flex w-full max-w-xl mx-auto flex-col rounded-lg border bg-neutral-900/50 text-neutral-200 transition-colors duration-300 hover:bg-neutral-900/70 p-4`}
+>
+  {/* If post is draft, displays a red pill at top-left. */}
+  {
+    isDraft && (
+      <span class="absolute -top-2.5 left-4 rounded-full bg-red-600 px-2 py-0.5 text-xs text-white select-none">
+        Draft
+      </span>
+    )
+  }
+  <div>
+    {/* Tags */}
+    <div class="flex flex-wrap gap-1.5 py-2 text-xs text-neutral-300">
+      {
+        tags.map((tag) => (
+          <a
+            class="hover:text-brand-500 rounded-lg border border-neutral-800/40 bg-neutral-900/50 px-2 py-1.5 capitalize transition-colors duration-300"
+            href={`/blog/${tag}`}
+          >
+            #{tag}
+          </a>
+        ))
+      }
+    </div>
+    <a
+      href={`/blog/${post.id}`}
+      class="hover:text-brand-500 block text-xl font-semibold text-neutral-200 transition-colors duration-300"
+    >
+      {title}
+    </a>
+
+    <p class="mt-1.5 mb-4 text-neutral-400">{description}</p>
+  </div>
+  <Link style="muted" href={`/blog/${post.id}`}>Read more &rarr;</Link>
+</article>

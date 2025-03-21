@@ -1,0 +1,40 @@
+---
+import PostCard from "./PostCard.astro";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  data: CollectionEntry<"posts">[];
+  maxVisible: 0 | number; // 0-10, 0 to disable.
+}
+
+const { data, maxVisible = 3 } = Astro.props;
+
+const sortedPosts = data.sort((a, b) => {
+  const dateA = new Date(a.data.publishDate).getTime();
+  const dateB = new Date(b.data.publishDate).getTime();
+  return dateB - dateA;
+});
+
+// Define the amount of latest posts to display at Astro.props above or in the [...slug] page itself with maxVisible prop
+// Between 0 - 10, 0 to disable.
+const latestPosts = sortedPosts.slice(0, maxVisible);
+---
+
+<div>
+  {
+    latestPosts && latestPosts.length > 0 && (
+      <div class="my-8">
+        <p class="text-brand-500 text-3xl font-bold">Latest Posts</p>
+        <div class="mt-4 grid gap-4">
+          {latestPosts.map((p) => (
+            <PostCard post={p} />
+          ))}
+        </div>
+      </div>
+    )
+  }
+  <a
+    href="/blog"
+    class="hover:text-brand-500 mx-auto mt-6 block w-fit rounded-lg border border-neutral-800/60 bg-neutral-900/50 p-3 whitespace-nowrap text-neutral-200 transition-colors duration-300"
+    >See all posts</a
+  >
+</div>

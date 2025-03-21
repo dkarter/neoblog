@@ -1,0 +1,20 @@
+---
+import { CircleDot } from "lucide-react";
+
+const { tag, roundedFull, Icon = CircleDot } = Astro.props;
+---
+
+<div
+  class={`pointer-events-none flex items-center ${
+    roundedFull ? "rounded-full" : "rounded-lg"
+  } border-x border-neutral-700/50 bg-gradient-to-r w-fit from-neutral-900 via-transparent to-neutral-900 px-3 py-1.5 text-sm capitalize text-neutral-400`}
+>
+  {
+    tag ? (
+      <span class="text-brand-500 mr-1">#</span>
+    ) : (
+      <Icon className="text-brand-500 mr-1.5 h-3 w-3 sm:h-4 sm:w-4" />
+    )
+  }
+  <slot />
+</div>

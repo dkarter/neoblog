@@ -1,0 +1,81 @@
+---
+import PostCard from "@/components/blog/PostCard.astro";
+import Link from "@/components/elements/Link.astro";
+import PageHeading from "@/components/elements/PageHeading.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import SearchBox from "@/components/search/SearchBox.astro";
+
+// This is the index page of blog.
+// You can have a different page for blog homepage and link to /blog for all posts.
+
+// Get the static paths for paginated pages
+// Draft pages excluded in production.
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const posts = await getCollection("posts", ({ data }) => {
+    return import.meta.env.PROD ? data.isDraft !== true : true;
+  });
+
+  const sortedByDatePosts = posts.sort((a, b) => {
+    const dateA = new Date(a.data.publishDate).getTime();
+    const dateB = new Date(b.data.publishDate).getTime();
+    return dateB - dateA;
+  });
+
+  return paginate(sortedByDatePosts, { pageSize: 6 }); // Define the amount of posts per page here
+};
+
+interface Props {
+  page?: {
+    data: CollectionEntry<"posts">[];
+    currentPage: number;
+    lastPage: number;
+    url: { next?: string; prev?: string };
+  };
+}
+const { page }: Props = Astro.props;
+// Example titles and descriptions. ^^
+// "My Thoughts" – If your blog is more about personal insights.
+// "My Reflections" – If you share deep analyses or lessons learned.
+// "My Journey" – If your blog captures ongoing experiences.
+// "My Insights" – If it's focused on sharing expertise.
+// "My Notes" – If you prefer a casual, journal-like approach.
+---
+
+<PageLayout
+  title="Blog"
+  description="Dive into articles that inspire, inform, and ignite curiosity. Explore my latest posts."
+>
+  <PageHeading
+    heading="My Thoughts"
+    paragraph="Dive into articles that inspire, inform, and ignite curiosity. Explore my latest posts below!"
+    tags={["Javascript 🚀", "Tailwind CSS 🌟", "Love 💖"]}
+    noBottomMargin
+  />
+  <SearchBox />
+  <div class="mx-auto mt-6 grid gap-4 lg:mt-12">
+    {page?.data.map((post) => <PostCard post={post} />)}
+  </div>
+
+  <div class="mx-auto mt-8 flex items-center justify-between max-md:max-w-md">
+    {
+      page?.url.prev && (
+        <Link style="muted" class="w-fit" href={page.url.prev}>
+          ← Previous
+        </Link>
+      )
+    }
+    <p class={`text-neutral-400 leading-none`}>
+      Page {page?.currentPage} of {page?.lastPage}
+    </p>
+    {
+      page?.url.next && (
+        <Link style="muted" class="w-fit text-right" href={page.url.next}>
+          Next →
+        </Link>
+      )
+    }
+  </div>
+</PageLayout>

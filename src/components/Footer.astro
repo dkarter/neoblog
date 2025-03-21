@@ -1,0 +1,16 @@
+---
+import { SITE_NAME } from "@/consts";
+---
+
+<footer
+  class="fixed right-1/2 bottom-1 z-30 translate-x-1/2 overflow-hidden px-4 pt-1.5 pb-2"
+>
+  <div
+    class="hover:text-brand-600 hover:shadow-brand-300/20 hover:ring-brand-600/50 relative mx-auto rounded-full border border-neutral-800 bg-neutral-900 px-4 py-1.5 text-center text-sm whitespace-nowrap text-neutral-400 shadow-md transition-all duration-300 hover:cursor-pointer hover:ring-[1px]"
+  >
+    <a href="/contact" class="relative block">
+      <span class="absolute inset-0"></span>
+      {SITE_NAME} © {new Date().getFullYear()}
+    </a>
+  </div>
+</footer>
