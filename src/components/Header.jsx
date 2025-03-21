@@ -12,7 +12,7 @@ import { Menu, Search, X } from "lucide-react";
 import { LOGO_URL, SOCIALS } from "@/consts";
 
 const NavItems = [
-  { name: "Portfolio", href: "/portfolio" },
+  // { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
