@@ -22,7 +22,7 @@ importers:
         version: 3.3.0
       '@fontsource-variable/saira':
         specifier: ^5.2.5
-        version: 5.2.6
+        version: 5.2.8
       '@headlessui/react':
         specifier: ^2.2.0
         version: 2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -373,8 +373,8 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@fontsource-variable/saira@5.2.6':
-    resolution: {integrity: sha512-S14tGYTMAHUZVdrakNK0Evr0xkWuoByHbLe4aWJuB7f9sjWYsS3Ei7TVtOZs2DM/SpBC58scn3bc4xI/QiIOcg==}
+  '@fontsource-variable/saira@5.2.8':
+    resolution: {integrity: sha512-yCquVgYRoooj/Llmhmymvi0K1lgRXtC3KzriIiu2H+uwHsOifnvsqiikcxpp9tfQ3mhhSDZDPKj6XybjtU9Svg==}
 
   '@headlessui/react@2.2.0':
     resolution: {integrity: sha512-RzCEg+LXsuI7mHiSomsu/gBJSjpupm6A1qIZ5sWjd7JhARNlMiSA4kKfJpCKwU9tE+zMRterhhrP74PvfJrpXQ==}
@@ -2474,7 +2474,7 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@fontsource-variable/saira@5.2.6': {}
+  '@fontsource-variable/saira@5.2.8': {}
 
   '@headlessui/react@2.2.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
