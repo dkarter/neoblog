@@ -2,84 +2,125 @@
 import Blockquote from "@/components/elements/Blockquote.astro";
 import PageHeading from "@/components/elements/PageHeading.astro";
 import PageLayout from "@/layouts/PageLayout.astro";
-import { Cog, Flame, School } from "lucide-react";
+import { Brain, Code, GraduationCap, Users, Target } from "lucide-react";
 ---
 
 <PageLayout title={"About me"} description={"Who is me?"}>
   <PageHeading
-    heading={"My Path"}
-    paragraph={"Hey there! I'm Dorian Karter, I specialize in weaving digital elegance to bring your online world to life."}
-    tags={["ReactJs Sorcerer 🌈", "CSS Maestro 🌀", "Motion Choreographer 🔥"]}
+    heading={"Welcome to my profile!"}
+    paragraph={"Hello! I'm Dorian Karter, a seasoned Full Stack Staff Software Engineer with a passion for writing clean, efficient, and scalable code."}
+    tags={[
+      "💜 Elixir",
+      "💙 TypeScript",
+      "⚛️ React",
+      "🐘 Postgres",
+      "🏠 ClickHouse",
+    ]}
   />
-  <div class="mb-6 grid w-full gap-y-10">
-    {/* Education */}
-    <div>
-      <div class="flex items-center gap-x-2">
-        <School
-          className="text-brand-500 h-6 w-6 drop-shadow-[#06b6d4_1px_1px_12px]"
-        />
-        <h2 class="text-brand-500 text-xl font-medium">Education</h2>
-      </div>
-      <h3 class="text-brand-50 mt-4 font-medium">
-        Bachelor of Science in Computer Science
-      </h3>
-      <span class="text-neutral-500"> Tech University, 2013 - 2017 </span>
-      <p class="mt-2 max-w-md text-neutral-400">
-        I began my coding journey with a solid computer science education at
-        Tech University, laying the foundation for navigating the ever-evolving
-        tech landscape.
-      </p>
-    </div>
-    {/* Experiences */}
-    <div>
-      <div class="flex items-center gap-x-2">
-        <Cog
-          className="text-brand-500 h-6 w-6 drop-shadow-[#06b6d4_1px_1px_12px]"
-        />
-        <h2 class="text-brand-500 text-xl font-medium">Experiences</h2>
-      </div>
-      <div class="mt-4">
-        <h3 class="text-brand-50 font-medium">Frontend Developer</h3>
-        <span class="text-neutral-500"> WebSolutions Inc., 2017 - 2021 </span>
-        <p class="mt-2 max-w-md text-neutral-400">
-          Frontend Developer at WebSolutions Inc. - Translating design concepts
-          into functional, user-friendly websites, I&apos;ve honed ReactJS
-          skills in diverse projects.
+
+  <div class="prose prose-invert mb-6 max-w-none">
+    <div class="space-y-8">
+      <section>
+        <div class="mb-4 flex items-baseline gap-x-3">
+          <Brain
+            className="text-brand-500 h-5 w-5 translate-y-0.5 drop-shadow-[#06b6d4_1px_1px_12px]"
+          />
+          <h2 class="text-brand-500 text-xl font-medium">
+            About my engineering philosophy
+          </h2>
+        </div>
+        <p class="leading-relaxed text-neutral-400">
+          I deeply believe in the philosophy of iterative development and
+          incremental progress. I stand by the mantra that "Done is better than
+          perfect". It's essential to deliver value quickly, but I also pay
+          immense attention to code quality, architecture, and scalability to
+          ensure the systems we build today don't become the bottlenecks of
+          tomorrow.
         </p>
-      </div>
-      <div class="mt-6">
-        <h3 class="text-brand-50 font-medium">UI/UX Designer</h3>
-        <span class="text-neutral-500">
-          CreativeDesign Studio, 2021 - ...
-        </span>
-        <p class="mt-2 max-w-md tracking-wide text-neutral-400">
-          UI/UX Designer at CreativeDesign Studio - Leveraging TailwindCSS, I
-          focused on creating responsive designs for an enhanced user
-          experience.
+      </section>
+
+      <section>
+        <div class="mb-4 flex items-baseline gap-x-3">
+          <Code
+            className="text-brand-500 h-5 w-5 translate-y-0.5 drop-shadow-[#06b6d4_1px_1px_12px]"
+          />
+          <h2 class="text-brand-500 text-xl font-medium">
+            Technical expertise
+          </h2>
+        </div>
+        <p class="leading-relaxed text-neutral-400">
+          My technical journey has led me to become proficient in a variety of
+          technologies, with particular love for Elixir, TypeScript, React, and
+          Postgres. Whether it's crafting elegant UIs with React, writing
+          fault-tolerant, scalable backend logic with Elixir, or ensuring data
+          consistency and security with Postgres, I'm comfortable throughout the
+          stack. I've also worked on complex distributed systems, ensuring high
+          availability and fault tolerance.
         </p>
-      </div>
+      </section>
+
+      <section>
+        <div class="mb-4 flex items-baseline gap-x-3">
+          <GraduationCap
+            className="text-brand-500 h-5 w-5 translate-y-0.5 drop-shadow-[#06b6d4_1px_1px_12px]"
+          />
+          <h2 class="text-brand-500 text-xl font-medium">
+            Continuous Learning
+          </h2>
+        </div>
+        <p class="leading-relaxed text-neutral-400">
+          I am a firm believer in lifelong learning. In the ever-evolving world
+          of technology, staying stagnant isn't an option. I am always ready to
+          explore new technologies, methodologies, and best practices to sharpen
+          my skills and stay on top of the game.
+        </p>
+      </section>
+
+      <section>
+        <div class="mb-4 flex items-baseline gap-x-3">
+          <Users
+            className="text-brand-500 h-5 w-5 translate-y-0.5 drop-shadow-[#06b6d4_1px_1px_12px]"
+          />
+          <h2 class="text-brand-500 text-xl font-medium">
+            Leadership and Collaboration
+          </h2>
+        </div>
+        <p class="leading-relaxed text-neutral-400">
+          As a Staff Engineer, I strive to drive technical vision, mentor
+          budding engineers, and facilitate a culture of collaboration and open
+          dialogue. Rather than simply focusing on my personal output, I see my
+          role as a force multiplier – accelerating the productivity and growth
+          of the entire team by sharing knowledge and enabling others to work
+          more effectively. I enjoy working with diverse teams and believe that
+          the best solutions emerge from the amalgamation of unique
+          perspectives.
+        </p>
+      </section>
+
+      <section>
+        <div class="mb-4 flex items-baseline gap-x-3">
+          <Target
+            className="text-brand-500 h-5 w-5 translate-y-0.5 drop-shadow-[#06b6d4_1px_1px_12px]"
+          />
+          <h2 class="text-brand-500 text-xl font-medium">
+            Building with Purpose
+          </h2>
+        </div>
+        <p class="leading-relaxed text-neutral-400">
+          Software engineering, to me, is more than just writing code—it's about
+          solving problems and creating value. I approach every task, big or
+          small, with a product mindset. I ask not just "how" to build, but
+          "why". This helps me stay aligned with user needs and business goals
+          and ensure that the technology we build serves a meaningful purpose.
+        </p>
+      </section>
     </div>
-    {/* Passion */}
-    <div>
-      <div class="flex items-center gap-x-2">
-        <Flame
-          className="text-brand-500 h-6 w-6 drop-shadow-[#06b6d4_1px_1px_12px]"
-        />
-        <h2 class="text-brand-500 text-xl font-medium">Passion</h2>
-      </div>
-      <h3 class="text-brand-50 mt-4 font-medium">
-        Continuous Learning and Community Engagement
-      </h3>
-      <p class="mt-2 max-w-md tracking-wide text-neutral-400">
-        Passion for Continuous Learning - Beyond work, I stay current with the
-        development community, fueling my passion for cutting-edge digital
-        solutions.
-      </p>
+
+    <div class="mt-12">
+      <Blockquote
+        quote="Great architecture isn't built overnight—it evolves with your business. I focus on writing code that scales gracefully, adapts to changing requirements, and grows sustainably alongside your company's ambitions."
+        author="Dorian Karter"
+      />
     </div>
-    {/* Blockquote */}
-    <Blockquote
-      quote="I bring real-world skills, dedication, and a genuine love for creating impactful digital experiences. Let's collaborate and turn your ideas into reality!"
-      author="Dorian Karter"
-    />
   </div>
 </PageLayout>
