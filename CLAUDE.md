@@ -9,9 +9,9 @@ This is **neoblog**, a personal blog and portfolio site built with Astro, React,
 ## Development Commands
 
 ### Core Commands
-- `pnpm dev` - Start development server with hot reloading
-- `pnpm build` - Build for production (outputs to `dist/`)
-- `pnpm preview` - Preview production build locally
+- `bun dev` - Start development server with hot reloading
+- `bun build` - Build for production (outputs to `dist/`)
+- `bun preview` - Preview production build locally
 
 ### Code Quality
 - `prettier --write .` - Format all files using Prettier
@@ -26,7 +26,7 @@ No dedicated linting or testing commands are configured in this project.
 - **Styling**: Tailwind CSS 4.0 with custom brand colors
 - **Content**: MDX support for blog posts with content collections
 - **Icons**: Lucide React + Simple Icons pack
-- **Package Manager**: pnpm (managed via mise with Node 22)
+- **Package Manager**: bun (managed via mise with Node 22)
 
 ### Key Directories
 - `src/components/` - Reusable UI components
@@ -64,4 +64,4 @@ Key constants defined in `src/consts.ts`:
 
 ## Development Environment
 
-Uses `mise.toml` for tool version management with Node 22 and automatic pnpm setup via corepack.
+Uses `mise.toml` for tool version management with Node 22 and bun.

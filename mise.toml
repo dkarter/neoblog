@@ -1,2 +1,3 @@
 [tools]
-node = { version = "22", postinstall = "corepack enable && corepack enable pnpm" }
+bun = "latest"
+node = "22"
