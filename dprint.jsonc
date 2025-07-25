@@ -1,0 +1,34 @@
+{
+  "$schema": "https://dprint.dev/schemas/v0.json",
+  "useTabs": false,
+  "indentWidth": 2,
+  "typescript": {},
+  "json": {},
+  "markdown": {},
+  "toml": {},
+  "biome": {},
+  "malva": {},
+  "exec": {
+    "cwd": "${configDir}",
+    "commands": [
+      {
+        "command": "bun prettier --stdin-filepath {{file_path}}",
+        "exts": ["astro"],
+        "stdin": true,
+      },
+    ],
+  },
+  "yaml": {},
+  "excludes": ["**/node_modules", "**/*-lock.json"],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.95.8.wasm",
+    "https://plugins.dprint.dev/json-0.20.0.wasm",
+    "https://plugins.dprint.dev/markdown-0.19.0.wasm",
+    "https://plugins.dprint.dev/toml-0.7.0.wasm",
+    "https://plugins.dprint.dev/biome-0.9.1.wasm",
+    "https://plugins.dprint.dev/g-plane/malva-v0.14.0.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.1.wasm",
+
+    "https://plugins.dprint.dev/exec-0.5.1.json@492414e39dea4dccc07b4af796d2f4efdb89e84bae2bd4e1e924c0cc050855bf",
+  ],
+}

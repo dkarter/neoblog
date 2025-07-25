@@ -1,3 +1,4 @@
 [tools]
 bun = "latest"
+dprint = "latest"
 node = "22"
