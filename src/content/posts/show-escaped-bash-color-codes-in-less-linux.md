@@ -3,7 +3,11 @@ title: Show escaped bash color codes in less #linux
 publishDate: 2018-06-11
 tags: [command-line]
 description: Display colored output from ls and commands when piping to less using -r flag to parse escape codes.
-relatedPosts: ["pipe-all-output-from-a-command-stderr-stdout", "use-pgrep-and-xargs-to-kill-processes-zsh-bash", "difference-between-output-of-two-commands-linux"]
+relatedPosts: [
+  "pipe-all-output-from-a-command-stderr-stdout",
+  "use-pgrep-and-xargs-to-kill-processes-zsh-bash",
+  "difference-between-output-of-two-commands-linux",
+]
 ---
 
 My ls command colors directories and files according to their type and permissions:
@@ -18,8 +22,8 @@ Which cannot correctly parse the escape code from ls and turn them into color. T
 
 ![solution](/images/EiPGO4q.gif)
 
-
 Notes:
+
 > My `l` alias is `gls -F -G --color --group-directories-first -lah` (`gls` is GNU ls)
 
 > You can `alias less=less -r` if you want this to be the default behavior for less.

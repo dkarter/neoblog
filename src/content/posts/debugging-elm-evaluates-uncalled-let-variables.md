@@ -25,7 +25,7 @@ When the `view` function is called you will see the console log message that `lo
 
 This can be useful for debugging function arguments coming in, or other variables without messing with the function's body.
 
-To avoid the `[elm-analyse 97] [W] Unused variable "logModel" ` warning you can use an underscore instead of naming the variable:
+To avoid the `[elm-analyse 97] [W] Unused variable "logModel"` warning you can use an underscore instead of naming the variable:
 
 ```elm
 example =

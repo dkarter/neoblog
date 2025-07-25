@@ -8,17 +8,17 @@ https://tailwindcss.com/docs/colors#default-color-palette-reference */
 @theme {
   --font-sans: "Saira Variable", sans-serif;
   /* Brand Colors*/
-  --color-brand-50: #D6CE93;
+  --color-brand-50: #d6ce93;
   /*  oklch(0.984 0.019 200.873); */
-  --color-brand-100: #EFEBCE;
+  --color-brand-100: #efebce;
   /* oklch(0.956 0.045 203.388); */
-  --color-brand-200: #D8A48F;
+  --color-brand-200: #d8a48f;
   /* oklch(0.917 0.08 205.041); */
-  --color-brand-300: #A3A380;
+  --color-brand-300: #a3a380;
   /* oklch(0.865 0.127 207.078); */
-  --color-brand-400: #BB8588;
+  --color-brand-400: #bb8588;
   /* oklch(0.789 0.154 211.53); */
-  --color-brand-500: #A3A380;
+  --color-brand-500: #a3a380;
   /* oklch(0.715 0.143 215.221); */
   --color-brand-600: oklch(0.609 0.126 221.723);
   --color-brand-700: oklch(0.52 0.105 223.128);

@@ -5,7 +5,11 @@ publishDate: 2017-11-20
 tags: ["command-line", "linux", "bash"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["easily-delete-a-long-word-in-terminal", "pipe-all-output-from-a-command-stderr-stdout", "no-ifconfig-on-linux"]
+relatedPosts: [
+  "easily-delete-a-long-word-in-terminal",
+  "pipe-all-output-from-a-command-stderr-stdout",
+  "no-ifconfig-on-linux",
+]
 ---
 
 Ever wonder what a command you are using is? Turns out linux has the answers for you!

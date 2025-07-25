@@ -5,7 +5,10 @@ publishDate: 2018-05-07
 tags: ["javascript", "yarn", "asdf", "node", "macos"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["install-node-modules-in-subdir-without-a-cd", "delete-all-nodemodules-dirs-recursively-with-find"]
+relatedPosts: [
+  "install-node-modules-in-subdir-without-a-cd",
+  "delete-all-nodemodules-dirs-recursively-with-find",
+]
 ---
 
 The asdf version manager is an awesome tool for managing many different language runtime versions. I recently started using it for Node and noticed that `yarn global` no longer plays nice with it.
@@ -23,6 +26,7 @@ Then in your `.zshrc` or equivalent remove the yarn global path (see my previous
 Now you want to find where asdf is being sourced into your .zshrc and insert a dynamic yarn global path:
 
 > ~/.zshrc
+
 ```bash
 # asdf global version manager
 source "$HOME/.asdf/asdf.sh"

@@ -3,7 +3,10 @@ publishDate: 2021-02-24
 title: Create Github PRs from a Jira Ticket
 tags: [workflow, automation, jira, fzf, github]
 description: Terminal function to auto-generate GitHub PRs from Jira tickets using FZF, Jira CLI, and GitHub CLI.
-relatedPosts: ["what-does-that-git-alias-do", "whats-my-public-ip-automation-linux-terminal"]
+relatedPosts: [
+  "what-does-that-git-alias-do",
+  "whats-my-public-ip-automation-linux-terminal",
+]
 ---
 
 TL; DR: add this function to your `.bashrc`/`.zshrc` to create a PR from a Jira ticket:
@@ -25,7 +28,7 @@ For this recipe you will need:
 
 - 3 cage free eggs
 - 2 cups of [FZF](https://github.com/junegunn/fzf)
-- 1 [Jira CLI](https://jiracli.com/) 
+- 1 [Jira CLI](https://jiracli.com/)
 - 1 whole grain [Github CLI](https://cli.github.com/)
 - And a dash of Ruby
 
@@ -49,7 +52,7 @@ In order to pick the base branch we use `FZF` to fuzzy find the name of the bran
 gh pr create --base "$(git branch | fzf)" --draft --title ""
 ```
 
-For the title we invoke the Jira CLI and get our list of assigned issues. This list gets piped into FZF for easy searching. 
+For the title we invoke the Jira CLI and get our list of assigned issues. This list gets piped into FZF for easy searching.
 
 ```bash
 jira i | fzf
@@ -58,7 +61,7 @@ jira i | fzf
 The output looks something like this:
 
 ```
-  XYZ-123    Code Review           Setup Sentry
+XYZ-123    Code Review           Setup Sentry
 ```
 
 Finally we pipe the output of the previous command into Ruby so that we can remove the ticket status ("Code Review") and create a title for the PR:

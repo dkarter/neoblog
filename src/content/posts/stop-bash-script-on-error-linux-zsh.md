@@ -6,7 +6,11 @@ tags: ["command-line"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/cp1ovv8ovo-stop-bash-script-on-error-linux-zsh"
-relatedPosts: ["pipe-all-output-from-a-command-stderr-stdout", "never-use-git-branch-in-a-script-without-doing-this", "use-pgrep-and-xargs-to-kill-processes-zsh-bash"]
+relatedPosts: [
+  "pipe-all-output-from-a-command-stderr-stdout",
+  "never-use-git-branch-in-a-script-without-doing-this",
+  "use-pgrep-and-xargs-to-kill-processes-zsh-bash",
+]
 ---
 
 If you are writing a procedural bash script, you may want to stop execution if one of the steps errored out.

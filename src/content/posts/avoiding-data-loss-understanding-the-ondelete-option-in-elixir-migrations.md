@@ -3,7 +3,10 @@ title: "Understanding :on_delete Option in Elixir Migrations"
 description: How to use on_delete option in Ecto migrations to prevent orphaned data and database inconsistencies.
 tags: [elixir, ecto, postgres, sqlite, database]
 publishDate: 2023-01-22
-relatedPosts: ["visualizing-elixir-otp-supervisor-strategies", "genserver-handlecontinue"]
+relatedPosts: [
+  "visualizing-elixir-otp-supervisor-strategies",
+  "genserver-handlecontinue",
+]
 ---
 
 When working with Elixir and Ecto, it is crucial to fully understand the
@@ -20,7 +23,6 @@ or inconsistent data. Instead, consider the following options for `on_delete`:
 - `:nilify_all` option will set the foreign key on all related records to NULL.
 
 - `:restrict` option will raise an error if you try to delete a parent record that has related records.
-
 
 Additionally, it's important to note that some databases have default behaviors
 that differ from Ecto's defaults. This makes `on_delete: :nothing` confusing and
@@ -45,9 +47,7 @@ associated with orphaned records in the child table. The only way around this,
 would be to explicitly set `AUTOINCREMENT` on the ID column, [which the
 ecto_sqlite3 adapter doesn't currently
 support](https://github.com/elixir-sqlite/ecto_sqlite3/issues/94). Additionally,
-maintaining a sequence table in SQLite [carries a performance
-penalty](https://www.sqlite.org/autoinc.html).
-
+maintaining a sequence table in SQLite [carries a performance penalty](https://www.sqlite.org/autoinc.html).
 
 ## The obvious use-case
 
@@ -82,6 +82,7 @@ This is pretty straight forward, and after understanding this example you might
 be tempted to always use `:on_delete`, but there are a few "gotchas".
 
 ## Slightly more complicated and less intuitive use-case
+
 One common pitfall when working with the `on_delete` option is thinking of the
 relationship in the wrong direction.
 
@@ -92,7 +93,6 @@ Merchants have `orders` for `customers` and each customer has multiple
 `order`.
 
 So in this example you have:
-
 
 ```elixir
 defmodule BookStore.Repo.Migrations.CreateCustomersOrdersAndMailingAddresses do
@@ -140,6 +140,7 @@ add :some_id, references(parent, when_parent_is_deleted: :delete_all_from_this_t
 ```
 
 In this case, we should consider one of these options instead:
+
 - Removing the `null: false` from the `mailing_address_id` on `orders` and change
   `:delete_all` to `:nilify_all`
 - Using soft deletes across the board, rather than actually deleting, so that we

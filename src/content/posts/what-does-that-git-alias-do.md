@@ -5,7 +5,11 @@ publishDate: 2020-01-28
 tags: ["git", "alias", "command-line"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["never-use-git-branch-in-a-script-without-doing-this", "delete-remote-git-branch-the-declarative-way", "jump-between-git-hunks-in-vim-with-vim-gitgutter"]
+relatedPosts: [
+  "never-use-git-branch-in-a-script-without-doing-this",
+  "delete-remote-git-branch-the-declarative-way",
+  "jump-between-git-hunks-in-vim-with-vim-gitgutter",
+]
 ---
 
 I have some git aliases in my [dotfiles](https://github.com/dkarter/dotfiles) and sometimes I use an alias for too long that I actually forget what it does under the hood.

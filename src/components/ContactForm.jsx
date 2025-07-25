@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { SITE_NAME } from "@/consts";
+import { useState } from "react";
 
 // Self explanatory, change you access key below and start using immediately.
 
@@ -119,7 +119,8 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             className="hover:border-brand-500/50 focus:border-brand-500 w-full rounded-lg border border-neutral-800/60 bg-neutral-900/40 px-4 py-3 text-sm text-neutral-400 transition-colors duration-300 focus-within:placeholder:opacity-30 focus:ring-0 focus:outline-none"
-          ></textarea>
+          >
+          </textarea>
         </div>
 
         <button
@@ -129,9 +130,7 @@ const ContactForm = () => {
             isSubmitting ? "cursor-not-allowed" : "cursor-pointer"
           } py-3 text-neutral-100 transition-all`}
         >
-          <span
-            className="animate-fade-in font-medium"
-            // style={{ "--fade-in-duration": "0.1s" }}
+          <span className="animate-fade-in font-medium" // style={{ "--fade-in-duration": "0.1s" }}
           >
             {buttonText}
           </span>

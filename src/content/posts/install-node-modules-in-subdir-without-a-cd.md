@@ -20,7 +20,6 @@ On a more serious note, if your front-end is stored in a sub directory of your p
 └── app
 ```
 
-
 Normally you would `cd` into assets, run `npm i`, and `cd` back out to the project root so you can go back to doing important things:
 
 ```bash
@@ -29,13 +28,13 @@ npm i
 cd -
 ```
 
-Or you can push and pop, cause you're kinda smart 
+Or you can push and pop, cause you're kinda smart
 
 ```bash
 pushd assets && npm i && popd
 ```
 
-Or if you're a really cool kid you'd use a sub-shell 
+Or if you're a really cool kid you'd use a sub-shell
 
 ```bash
 (cd assets && npm i)

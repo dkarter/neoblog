@@ -1,15 +1,9 @@
-import { useState, useEffect } from "react";
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  Transition,
-  TransitionChild,
-} from "@headlessui/react";
+import { Dialog, DialogBackdrop, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
+import { useEffect, useState } from "react";
 // import LetsWorkTogether from "../ui/LetsWorkTogether";
+import { LOGO_URL, SOCIALS } from "@/consts";
 import { cn } from "@/lib/utils";
 import { Menu, Search, X } from "lucide-react";
-import { LOGO_URL, SOCIALS } from "@/consts";
 
 const NavItems = [
   // { name: "Portfolio", href: "/portfolio" },
@@ -209,7 +203,5 @@ function Navigation(props) {
 }
 
 export default function Header() {
-  return (
-    <Navigation className="flex max-w-xl items-center justify-between overflow-hidden sm:mx-auto sm:px-4" />
-  );
+  return <Navigation className="flex max-w-xl items-center justify-between overflow-hidden sm:mx-auto sm:px-4" />;
 }

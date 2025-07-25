@@ -6,7 +6,10 @@ tags: ["sql"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/noktunb4zn-postgres-automatically-appends-timezone"
-relatedPosts: ["case-insensitive-in-query-in-postgres-psql", "show-materialized-view-definition-in-postgresql"]
+relatedPosts: [
+  "case-insensitive-in-query-in-postgres-psql",
+  "show-materialized-view-definition-in-postgresql",
+]
 ---
 
 Dates can be notoriously hard, particularly when it comes to timezones.

@@ -12,10 +12,10 @@ Maybe you are like facebook and just want to warn your users from pasting in cod
 
 ![facebook](/images/scYosRC.png)
 
-To style a console.log message use the `%c` interpolation and pass it a css style. e.g. 
+To style a console.log message use the `%c` interpolation and pass it a css style. e.g.
 
 ```javascript
-console.log('%c%s', 'color:red;font-size:5em', alert)
+console.log("%c%s", "color:red;font-size:5em", alert);
 ```
 
 In the example above `%s` means inerpolate the object into the output string.

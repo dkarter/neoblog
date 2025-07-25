@@ -4,12 +4,17 @@ description: "Comprehensive DNS guide covering how it works, privacy concerns, s
 publishDate: 2022-01-30
 tags: ["networking", "dns", "security", "privacy"]
 isDraft: false
-relatedPosts: ["whats-my-public-ip-automation-linux-terminal", "get-the-linux-ip-command-line-utility-on-docker"]
+relatedPosts:
+  [
+    "whats-my-public-ip-automation-linux-terminal",
+    "get-the-linux-ip-command-line-utility-on-docker",
+  ]
 ---
 
 ## (Maybe Obvious) Preamble
 
 ### What is DNS?
+
 > Wife: What's DNS?
 >
 > Me: It's that thing you use every day when you browse the web on your phone.
@@ -22,8 +27,7 @@ relatedPosts: ["whats-my-public-ip-automation-linux-terminal", "get-the-linux-ip
 >
 > ![](/images/eyeroll.gif)
 
-
-In a nutshell, DNS, or [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) is a system used by computers to translate domain names (e.g. `example.com`) to their corresponding IP address, which is mapped to a server hosting the content you want to view[^1]. This request happens *before* your computer can talk to the server directly and contains only the domain (`example.com`), not the full URL (`example.com/blog/page.html`).
+In a nutshell, DNS, or [Domain Name System](https://en.wikipedia.org/wiki/Domain_Name_System) is a system used by computers to translate domain names (e.g. `example.com`) to their corresponding IP address, which is mapped to a server hosting the content you want to view[^1]. This request happens _before_ your computer can talk to the server directly and contains only the domain (`example.com`), not the full URL (`example.com/blog/page.html`).
 
 You can think of DNS as a phone book with the resolving server as the switch operator.
 
@@ -38,6 +42,7 @@ So DNS is solving a real problem and makes it easy for developers to swap out th
 Because of how DNS is structured it poses some concerns in regards to censorship, security and privacy.
 
 ### Censorship, Security and Privacy Considerations
+
 Unlike most web traffic these days that uses SSL (HTTPS), DNS is by and large not encrypted and it relies on a resolving server (similar to an old phone switch operator) to funnel all requests. This design makes DNS a prime target for parental controls software, censorship, tracking, and [Man-in-the-Middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack).
 
 Since the most used resolving name servers are owned by private corporations such as ISPs, Google, CloudFlare etc, it makes it easier for those corporations, and by extension governments, censor which websites you can access.
@@ -49,21 +54,22 @@ Similarly, if by request of the government, Comcast decides that they no longer 
 The Chinese Government infamously uses DNS spoofing to censor the [internet in their country](https://en.wikipedia.org/wiki/Internet_censorship_in_China#Technical_implementation) and preventing their citizens from reading about [certain targeted topics](https://en.wikipedia.org/wiki/Internet_censorship_in_the_People%27s_Republic_of_China#Targets_of_censorship) such as the [Tiananmen Square Massacre](https://en.wikipedia.org/wiki/1989_Tiananmen_Square_protests_and_massacre).
 
 #### Ever used public WiFi?
+
 Hackers often use poor network security, and the unencrypted nature of DNS, to not only track those around them, but also to redirect their traffic to a maliciously crafted website. So if you are on a network you don't control such as public WiFi (or a fake network pretending to be public WIFI 😉), the hacker can redirect `yourbank.com` to a VERY convincing copy of your bank's login page and steal your credentials[^2].
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EbetD2LMbeQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 #### One Thousand Eyes
+
 Moreover, every time you access a website, either directly, or indirectly (some script on your computer requests a website), the DNS server can keep a record of your computer's IP and the requested domain. This data is routinely [collected and often sold](https://arstechnica.com/information-technology/2017/03/how-isps-can-sell-your-web-history-and-how-to-stop-them/). This harms your privacy because this type of metadata can help companies and governments build a profile cataloging what type of websites you visit, when, and how often. It can also be used to identify and "weed out" political dissidents.
 
 Don't get me started with the "[But](https://spreadprivacy.com/three-reasons-why-the-nothing-to-hide-argument-is-flawed/) [I](https://en.wikipedia.org/wiki/Nothing_to_hide_argument) [have](https://www.amnesty.org/en/latest/campaigns/2015/04/7-reasons-why-ive-got-nothing-to-hide-is-the-wrong-response-to-mass-surveillance/) [nothing](https://www.youtube.com/watch?v=Qn-YEvFi0Ew) [to](https://www.youtube.com/watch?v=cNb9riPyqzs) [hide](https://www.schneier.com/blog/archives/2006/05/the_value_of_pr.html)" fallacy.
 
 ## Censorship, Security and Privacy Solutions
+
 There are also other DNS providers that you can use that offer varying degrees of benefit over using the default ISP DNS. For example [Quad9](https://www.quad9.net/) (9.9.9.9) which is a more secure and privacy respecting DNS server than your ISP's DNS server (allegedly, because we should all be skeptics).
 
-Finally, you can run your own DNS server using something like [Pi
-Hole](https://pi-hole.net/). Pi Hole is a DNS server you can run on a cheap $10 computer [such as the Raspberry Pi Zero W](https://www.pishop.us/product/raspberry-pi-zero-w/) and use to block ads from every device on your local network. You can even use it on the go with your phone by [setting up a VPN](https://docs.pi-hole.net/guides/vpn/openvpn/overview/).
+Finally, you can run your own DNS server using something like [Pi Hole](https://pi-hole.net/). Pi Hole is a DNS server you can run on a cheap $10 computer [such as the Raspberry Pi Zero W](https://www.pishop.us/product/raspberry-pi-zero-w/) and use to block ads from every device on your local network. You can even use it on the go with your phone by [setting up a VPN](https://docs.pi-hole.net/guides/vpn/openvpn/overview/).
 
 Blocking ads is also great not only for regaining control of your precious attention and privacy, but also for [speeding up web browsing](https://thetechieguy.com/ad-blocker-impact-internet-speed/), [reducing data usage on limited internet plans](https://www.nytimes.com/interactive/2015/10/01/business/cost-of-mobile-ads.html), [conserving battery](https://www.nytimes.com/2015/10/01/technology/personaltech/ad-blockers-mobile-iphone-browsers.html) while on the go and even [reducing CO2 emissions](https://www.sciencedirect.com/science/article/pii/S0195925517303505)!
 
@@ -74,11 +80,13 @@ There are many reasons why you might want to [run your own DNS server](https://j
 DNS is a request/response transaction or question/answer. Your computer asks `What's the IP for example.com?` and the DNS server answers `It's 93.184.216.34`. This is an over simplification.
 
 ### What's inside the packet?
+
 [Julia Evans](https://twitter.com/b0rk) posted a really cool diagram/comic explaining the request/response cycle of a DNS request:
 
 [![](/images/dns.png)](https://wizardzines.com/comics/dns-packet/)
 
 ### DIY
+
 Want to see for yourself what's inside a DNS packet? Use the [dig](https://linux.die.net/man/1/dig) CLI, which is available on most Linux based systems:
 
 ```bash
@@ -122,11 +130,7 @@ And you should get something looking like this:
     "id": 10267,
     "opcode": "QUERY",
     "status": "NOERROR",
-    "flags": [
-      "qr",
-      "rd",
-      "ra"
-    ],
+    "flags": ["qr", "rd", "ra"],
     "query_num": 1,
     "answer_num": 1,
     "authority_num": 0,
@@ -162,15 +166,16 @@ And you should get something looking like this:
 ]
 ```
 
-
 ## Keep reading: A few interesting topics related to DNS
 
 ### Handshake (HNS)
+
 HNS is a cryptocurrency based, truly decentralized, censorship and tamper resistant TLD provider. It allows you to buy an entire class of domains e.g. `yourname.😍` and sell domains as a registrar.
 
 Read more here: https://learn.namebase.io/about-handshake/about-handshake
 
 ### DNS over HTTPS (DoH)
+
 Since DNS is not encrypted, anyone on a public network (think Starbucks Free WIFI), can listen in to your DNS requests - this is surprisingly easy to do. DNS over HTTPS uses the common SSL encryption available on most websites to encrypt the request response cycle and protects it from "Man-in-the-Middle" attacks]. Read more here: https://en.wikipedia.org/wiki/DNS_over_HTTPS
 
 While some operating systems still don't support DoH natively, you can still set up DoH via a local proxy server such as [cloudflared](https://github.com/cloudflare/cloudflared) and [Pi Hole](https://docs.pi-hole.net/guides/dns/cloudflared/).
@@ -178,12 +183,13 @@ While some operating systems still don't support DoH natively, you can still set
 If you are using Firefox you can also [enable DoH in your browser](https://support.mozilla.org/en-US/kb/firefox-dns-over-https#w_manually-enabling-and-disabling-dns-over-https)[^3].
 
 ### DNS Spoofing
+
 DNS Spoofing is an attack in which DNS requests can be intercepted and redirected to alternate addresses, often a malicious server.
 
-Read more of [how to perform DNS Spoofing
-attack](https://null-byte.wonderhowto.com/how-to/tutorial-dns-spoofing-0167796/)
+Read more of [how to perform DNS Spoofing attack](https://null-byte.wonderhowto.com/how-to/tutorial-dns-spoofing-0167796/)
 
 ### Additional deep dives into DNS
+
 Check out the rest of [Julia Evans' DNS articles](https://jvns.ca/categories/dns/).
 Julia always does a great job explaining complicated topics succinctly!
 

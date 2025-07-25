@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 interface MermaidProps {
   code: string;
@@ -16,55 +16,55 @@ export default function Mermaid({ code }: MermaidProps) {
 
       try {
         // Dynamically import mermaid to avoid SSR issues
-        const mermaid = await import('mermaid');
+        const mermaid = await import("mermaid");
 
         // Initialize mermaid with dark theme
         mermaid.default.initialize({
           startOnLoad: false,
-          theme: 'dark',
+          theme: "dark",
           themeVariables: {
-            primaryColor: '#374151',
-            primaryTextColor: '#f9fafb',
-            primaryBorderColor: '#6b7280',
-            lineColor: '#9ca3af',
-            secondaryColor: '#4b5563',
-            tertiaryColor: '#6b7280',
-            background: '#111827',
-            mainBkg: '#1f2937',
-            secondBkg: '#374151',
-            tertiaryBkg: '#4b5563',
+            primaryColor: "#374151",
+            primaryTextColor: "#f9fafb",
+            primaryBorderColor: "#6b7280",
+            lineColor: "#9ca3af",
+            secondaryColor: "#4b5563",
+            tertiaryColor: "#6b7280",
+            background: "#111827",
+            mainBkg: "#1f2937",
+            secondBkg: "#374151",
+            tertiaryBkg: "#4b5563",
             darkMode: true,
             // Flowchart colors
-            clusterBkg: '#374151',
-            clusterBorder: '#6b7280',
-            defaultLinkColor: '#9ca3af',
+            clusterBkg: "#374151",
+            clusterBorder: "#6b7280",
+            defaultLinkColor: "#9ca3af",
             // Sequence diagram colors
-            actorBorder: '#6b7280',
-            actorBkg: '#374151',
-            actorTextColor: '#f9fafb',
-            actorLineColor: '#9ca3af',
-            signalColor: '#f9fafb',
-            signalTextColor: '#f9fafb',
+            actorBorder: "#6b7280",
+            actorBkg: "#374151",
+            actorTextColor: "#f9fafb",
+            actorLineColor: "#9ca3af",
+            signalColor: "#f9fafb",
+            signalTextColor: "#f9fafb",
             // Gantt colors
-            gridColor: '#4b5563',
-            section0: '#374151',
-            section1: '#4b5563',
-            section2: '#6b7280',
-            section3: '#9ca3af',
+            gridColor: "#4b5563",
+            section0: "#374151",
+            section1: "#4b5563",
+            section2: "#6b7280",
+            section3: "#9ca3af",
             // Git graph colors
-            git0: '#ef4444',
-            git1: '#f59e0b',
-            git2: '#10b981',
-            git3: '#3b82f6',
-            git4: '#8b5cf6',
-            git5: '#ec4899',
-            git6: '#f97316',
-            git7: '#84cc16'
+            git0: "#ef4444",
+            git1: "#f59e0b",
+            git2: "#10b981",
+            git3: "#3b82f6",
+            git4: "#8b5cf6",
+            git5: "#ec4899",
+            git6: "#f97316",
+            git7: "#84cc16",
           },
           flowchart: {
             htmlLabels: true,
-            curve: 'basis',
-            useMaxWidth: true
+            curve: "basis",
+            useMaxWidth: true,
           },
           sequence: {
             diagramMarginX: 50,
@@ -77,18 +77,18 @@ export default function Mermaid({ code }: MermaidProps) {
             noteMargin: 10,
             messageMargin: 35,
             mirrorActors: true,
-            useMaxWidth: true
+            useMaxWidth: true,
           },
           gantt: {
             useMaxWidth: true,
             fontSize: 12,
             gridLineStartPadding: 35,
             bottomPadding: 25,
-            leftPadding: 75
+            leftPadding: 75,
           },
           gitGraph: {
-            useMaxWidth: true
-          }
+            useMaxWidth: true,
+          },
         });
 
         if (!mounted.current || !elementRef.current) return;
@@ -103,40 +103,40 @@ export default function Mermaid({ code }: MermaidProps) {
           elementRef.current.innerHTML = svg;
 
           // Apply additional styling to the rendered SVG
-          const svgElement = elementRef.current.querySelector('svg');
+          const svgElement = elementRef.current.querySelector("svg");
           if (svgElement) {
-            svgElement.style.backgroundColor = 'transparent';
-            svgElement.style.maxWidth = '100%';
-            svgElement.style.height = 'auto';
-            svgElement.style.display = 'block';
-            svgElement.style.margin = '0 auto';
+            svgElement.style.backgroundColor = "transparent";
+            svgElement.style.maxWidth = "100%";
+            svgElement.style.height = "auto";
+            svgElement.style.display = "block";
+            svgElement.style.margin = "0 auto";
 
             // Ensure text is visible
-            const textElements = svgElement.querySelectorAll('text');
+            const textElements = svgElement.querySelectorAll("text");
             textElements.forEach((text) => {
               const element = text as SVGTextElement;
-              if (!element.style.fill || element.style.fill === '#000000') {
-                element.style.fill = '#f9fafb';
+              if (!element.style.fill || element.style.fill === "#000000") {
+                element.style.fill = "#f9fafb";
               }
             });
 
             // Style paths and shapes
-            const paths = svgElement.querySelectorAll('path');
+            const paths = svgElement.querySelectorAll("path");
             paths.forEach((path) => {
               const element = path as SVGPathElement;
               if (!element.style.stroke) {
-                element.style.stroke = '#9ca3af';
+                element.style.stroke = "#9ca3af";
               }
             });
           }
         }
       } catch (error) {
-        console.error('Mermaid rendering error:', error);
+        console.error("Mermaid rendering error:", error);
         if (mounted.current && elementRef.current) {
           elementRef.current.innerHTML = `
             <div class="rounded border border-red-800/50 bg-red-900/20 p-4 text-red-400">
               <div class="font-medium">Error rendering Mermaid diagram</div>
-              <div class="mt-2 text-sm">${error instanceof Error ? error.message : 'Unknown error'}</div>
+              <div class="mt-2 text-sm">${error instanceof Error ? error.message : "Unknown error"}</div>
               <details class="mt-3">
                 <summary class="cursor-pointer text-xs text-red-300">Show diagram code</summary>
                 <pre class="mt-2 whitespace-pre-wrap text-xs text-red-200">${code}</pre>

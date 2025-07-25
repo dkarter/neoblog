@@ -3,7 +3,11 @@ title: GenServer handle_continue/2
 publishDate: 2022-03-20
 tags: [elixir]
 description: GenServer handle_continue callback for async initialization and avoiding blocking operations in init.
-relatedPosts: ["visualizing-elixir-otp-supervisor-strategies", "serve-phoenix-app-locally-with-https", "get-a-writable-temporary-directory-in-elixir"]
+relatedPosts: [
+  "visualizing-elixir-otp-supervisor-strategies",
+  "serve-phoenix-app-locally-with-https",
+  "get-a-writable-temporary-directory-in-elixir",
+]
 ---
 
 I recently learned about a delightful new(ish) feature in Elixir's GenServer that
@@ -72,7 +76,6 @@ end
 
 The return type is the same as `handle_cast` and you can even chain multiple
 continue operations in a row, for example:
-
 
 ```elixir
 defmodule MyServer do

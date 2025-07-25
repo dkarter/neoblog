@@ -5,7 +5,11 @@ publishDate: 2023-05-29
 tags: ["homebrew", "macos", "linux", "package-management"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["using-yarn-global-w-node-through-asdf-mac", "difference-between-output-of-two-commands-linux", "whatis-command-and-apropos-in-linux-bash"]
+relatedPosts: [
+  "using-yarn-global-w-node-through-asdf-mac",
+  "difference-between-output-of-two-commands-linux",
+  "whatis-command-and-apropos-in-linux-bash",
+]
 ---
 
 Have you ever installed something using Homebrew and noticed the command's output updating seemingly unrelated packages? This recently happened to me, and it piqued my curiosity. As a result, I embarked on a journey to understand how package dependencies work within the Homebrew universe. This post is a friendly guide to what I've discovered, which I hope will help others navigate the complex web of package dependencies.

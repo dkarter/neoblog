@@ -15,6 +15,7 @@ site is that search engines may penalize you/or them for plagiarism because it
 doesn't know which site is the original owner of the content.
 
 ## Fixing Duplicate Content
+
 When content exists in more than one URL, it is a best practice for the copy to
 signify to search engines which source is the canonical one. This is where
 Canonical Link Tag comes in:
@@ -28,21 +29,17 @@ Canonical Link Tag comes in:
 ```
 
 That link tag lives inside the `<head>` tag and should only be specified once!
-Make sure to check out this article by Google of [5 Common Mistakes with
-rel=canonical](https://developers.google.com/search/blog/2013/04/5-common-mistakes-with-relcanonical)
+Make sure to check out this article by Google of [5 Common Mistakes with rel=canonical](https://developers.google.com/search/blog/2013/04/5-common-mistakes-with-relcanonical)
 
 This technique is also useful if you have multiple URLs for your website (e.g.
 `www.example.com/blog/post` and bare domain - `example.com/blog/post`).
 
 ## Adding Canonical Link Tag on Gatsby
 
-Gatsby is built on top of React, and if you use the [default starter blog
-template](https://github.com/gatsbyjs/gatsby-starter-blog) you will get an SEO
-component out of the box. That component is using the [React Helmet
-library](https://github.com/nfl/react-helmet). This library allows you to inject
+Gatsby is built on top of React, and if you use the [default starter blog template](https://github.com/gatsbyjs/gatsby-starter-blog) you will get an SEO
+component out of the box. That component is using the [React Helmet library](https://github.com/nfl/react-helmet). This library allows you to inject
 content into the head tag. The body of the SEO component should look something
 like this:
-
 
 ```jsx
 const SEO = ({ title, lang, description }) => {
@@ -57,27 +54,25 @@ const SEO = ({ title, lang, description }) => {
       meta={meta}
     />
   );
-}
+};
 ```
 
 To inject the canonical link tag all we have to do is modify the `<Helmet>`
 properties to include the link property. Since not all posts are going to have
 the canonical tag, we will make it optional:
 
-
 ```jsx
 const SEO = ({ title, lang, description, canonicalName, canonicalUrl }) => {
   // ...
-  const canonicalLink =
-    canonicalName && canonicalUrl
-      ? [
-          {
-            rel: 'canonical',
-            key: canonicalName,
-            href: canonicalUrl,
-          },
-        ]
-      : [];
+  const canonicalLink = canonicalName && canonicalUrl
+    ? [
+      {
+        rel: "canonical",
+        key: canonicalName,
+        href: canonicalUrl,
+      },
+    ]
+    : [];
 
   return (
     <Helmet
@@ -90,7 +85,7 @@ const SEO = ({ title, lang, description, canonicalName, canonicalUrl }) => {
       meta={meta}
     />
   );
-}
+};
 ```
 
 Now in our post template component we will need to pass the canonical
@@ -140,7 +135,7 @@ const BlogPostTemplate: React.FC<PageProps<DataResult>> = ({
       {/* ... */}
     </Layout>
   );
-}
+};
 ```
 
 Now all that's left is updating a post's frontmatter with the canonical

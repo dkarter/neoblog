@@ -3,7 +3,11 @@ title: Get ONLY PIDs for processes listening on a port
 publishDate: 2018-09-27
 tags: [command-line]
 description: Use lsof -t flag to get only PIDs for processes listening on specific port, perfect for kill commands.
-relatedPosts: ["use-pgrep-and-xargs-to-kill-processes-zsh-bash", "whats-my-public-ip-automation-linux-terminal", "no-ifconfig-on-linux"]
+relatedPosts: [
+  "use-pgrep-and-xargs-to-kill-processes-zsh-bash",
+  "whats-my-public-ip-automation-linux-terminal",
+  "no-ifconfig-on-linux",
+]
 ---
 
 The lsof utility on Linux is useful among other things for checking which process is listening on a specific port.

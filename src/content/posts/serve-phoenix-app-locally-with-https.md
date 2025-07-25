@@ -5,7 +5,11 @@ publishDate: 2019-08-20T15:11:04Z
 tags: ["elixir"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["genserver-handlecontinue", "get-a-writable-temporary-directory-in-elixir", "get-applications-current-version-in-production"]
+relatedPosts: [
+  "genserver-handlecontinue",
+  "get-a-writable-temporary-directory-in-elixir",
+  "get-applications-current-version-in-production",
+]
 canonicalUrl: "https://til.hashrocket.com/posts/b8p5oalouz--serve-phoenix-app-locally-with-https-"
 ---
 
@@ -15,7 +19,7 @@ The Phoenix Framework provides an easy mix task to automatically generate a self
 mix phx.gen.cert
 ```
 
-The self-sigend certs will be stored in `priv/cert`	so make sure you add that path to your `.gitignore`.
+The self-sigend certs will be stored in `priv/cert`so make sure you add that path to your `.gitignore`.
 
 When finished the command will prompt you to update your endpoint configuration and a few imporant warnings:
 

@@ -7,7 +7,10 @@ tags: ["dotfiles", "neovim", "tmux"]
 isDraft: false
 isFeatured: false
 image: "/images/dotfiles-screenshot.jpeg"
-relatedPosts: ["pretty-print-json-in-neovimvim-using-jq", "customize-vims-gx-mapping"]
+relatedPosts: [
+  "pretty-print-json-in-neovimvim-using-jq",
+  "customize-vims-gx-mapping",
+]
 ---
 
 Hey! just wanted to share that my dotfiles were featured on the Dotfiles

@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
 import Fuse from "fuse.js";
 import { SearchIcon } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 {
   /* SOME NOTES:
@@ -59,8 +59,8 @@ export default function Search({ posts }: Props) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        searchContainerRef.current &&
-        !searchContainerRef.current.contains(event.target as Node)
+        searchContainerRef.current
+        && !searchContainerRef.current.contains(event.target as Node)
       ) {
         setSearchInput("");
       }
@@ -81,14 +81,10 @@ export default function Search({ posts }: Props) {
       setFilteredPosts([]);
       setFocusedIndex(0);
     } else if (e.key === "ArrowDown") {
-      setFocusedIndex((prev) =>
-        prev === resultCount - 1 ? 0 : Math.min(prev + 1, resultCount - 1),
-      );
+      setFocusedIndex((prev) => prev === resultCount - 1 ? 0 : Math.min(prev + 1, resultCount - 1));
       e.preventDefault();
     } else if (e.key === "ArrowUp") {
-      setFocusedIndex((prev) =>
-        prev === 0 ? resultCount - 1 : Math.max(prev - 1, 0),
-      );
+      setFocusedIndex((prev) => prev === 0 ? resultCount - 1 : Math.max(prev - 1, 0));
       e.preventDefault();
     } else if (e.key === "Enter") {
       if (filteredPosts.length > 0) {
@@ -199,12 +195,12 @@ const highlightText = (text: string, searchTerm: string) => {
   if (!searchTerm) return text;
   const parts = text.split(new RegExp(`(${searchTerm})`, "gi"));
   return parts.map((part, index) =>
-    part.toLowerCase() === searchTerm.toLowerCase() ? (
-      <span key={index} className="bg-brand-600 text-neutral-50">
-        {part}
-      </span>
-    ) : (
-      part
-    ),
+    part.toLowerCase() === searchTerm.toLowerCase()
+      ? (
+        <span key={index} className="bg-brand-600 text-neutral-50">
+          {part}
+        </span>
+      )
+      : part
   );
 };

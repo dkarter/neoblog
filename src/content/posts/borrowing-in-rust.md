@@ -103,4 +103,3 @@ function has been called.
 Finally, Rust's compiler is able to use this feature to ensure that references
 are always valid, preventing an entire class of errors which are hard to debug
 and are often only discovered during runtime in many languages.
-

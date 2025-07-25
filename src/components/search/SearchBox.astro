@@ -8,13 +8,13 @@ const posts = await getCollection("posts", ({ data }) => !data.isDraft).then(
       id,
       title,
       description,
-    }))
+    })),
 );
 ---
 
 {
   /* Put this component anywhere you like to have searchbar.
-  <SearchBox/>
-For example look at the search.astro page */
+    <SearchBox/>
+  For example look at the search.astro page */
 }
 <Search posts={posts} client:load />

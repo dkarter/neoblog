@@ -3,12 +3,15 @@ publishDate: 2018-08-05
 title: Copy files with progress in terminal w/rsync
 tags: [command-line]
 description: Use rsync with progress indicators for large data transfers with visual feedback on speed and time.
-relatedPosts: ["whats-my-public-ip-automation-linux-terminal", "use-pgrep-and-xargs-to-kill-processes-zsh-bash"]
+relatedPosts: [
+  "whats-my-public-ip-automation-linux-terminal",
+  "use-pgrep-and-xargs-to-kill-processes-zsh-bash",
+]
 ---
 
 When you need to transfer a lot of files from one location to another it's sometimes useful to have some progress indication and maybe even a speed measure, or time remaining.
 
-I recently had to transfer a few gigabytes of data from one computer to another. For this task I chose to use Rsync, since it is a command line utility that can preserve file metadata (permissions) and easily resume in case of an error. 
+I recently had to transfer a few gigabytes of data from one computer to another. For this task I chose to use Rsync, since it is a command line utility that can preserve file metadata (permissions) and easily resume in case of an error.
 
 Rsync ships with macOS by default, but if you want to get a more recent version, you can install it from homebrew.
 

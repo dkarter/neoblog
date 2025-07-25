@@ -6,7 +6,7 @@ description: Capture and manipulate browser paste events to enhance UX, includin
 relatedPosts: ["custom-errors-in-javascript"]
 ---
 
-Browsers allow you to capture a `paste` event in a DOM element [[1]](https://www.w3.org/TR/clipboard-apis/#clipboard-event-paste)  [[2]](https://developer.mozilla.org/en-US/docs/Web/Events/paste).
+Browsers allow you to capture a `paste` event in a DOM element [[1]](https://www.w3.org/TR/clipboard-apis/#clipboard-event-paste) [[2]](https://developer.mozilla.org/en-US/docs/Web/Events/paste).
 
 This event fires before any clipboard data is inserted into the document, which makes it ideal for manipulating the data and pasting the manipulated data instead.
 

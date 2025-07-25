@@ -5,11 +5,15 @@ publishDate: 2018-05-31T20:00:15Z
 tags: ["sql"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["quick-syntax-reference-for-sql-directly-in-psql", "list-all-available-extensions-in-postgres", "case-insensitive-in-query-in-postgres-psql"]
+relatedPosts: [
+  "quick-syntax-reference-for-sql-directly-in-psql",
+  "list-all-available-extensions-in-postgres",
+  "case-insensitive-in-query-in-postgres-psql",
+]
 canonicalUrl: "https://til.hashrocket.com/posts/gh42hxndbm-show-materialized-view-definition-in-postgresql"
 ---
 
-PSQL offers a handy `\dv` function for showing the definition of a view. That function does not seem to work on materialized views. 
+PSQL offers a handy `\dv` function for showing the definition of a view. That function does not seem to work on materialized views.
 
 To see the definition of a materialized view use the following instead:
 

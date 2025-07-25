@@ -3,7 +3,11 @@ publishDate: 2018-04-23
 title: Case insensitive `in` query in #postgres #psql
 tags: [sql]
 description: Perform case-insensitive PostgreSQL queries using citext extension to match records regardless of casing.
-relatedPosts: ["quick-syntax-reference-for-sql-directly-in-psql", "list-all-available-extensions-in-postgres", "postgres-automatically-appends-timezone"]
+relatedPosts: [
+  "quick-syntax-reference-for-sql-directly-in-psql",
+  "list-all-available-extensions-in-postgres",
+  "postgres-automatically-appends-timezone",
+]
 ---
 
 If you have a list of strings and you want to query a column to get all the matching records, but you do not care about the casing, Postgres offers a cool and easy way of doing that with the citext extension.

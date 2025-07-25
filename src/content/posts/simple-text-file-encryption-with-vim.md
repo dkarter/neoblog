@@ -5,7 +5,11 @@ publishDate: 2017-11-29T19:53:21Z
 tags: ["vim"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["customize-vims-gx-mapping", "pipe-text-into-vim-from-stdin", "pretty-print-json-in-neovimvim-using-jq"]
+relatedPosts: [
+  "customize-vims-gx-mapping",
+  "pipe-text-into-vim-from-stdin",
+  "pretty-print-json-in-neovimvim-using-jq",
+]
 canonicalUrl: "https://til.hashrocket.com/posts/qkoxblhqfr-simple-text-file-encryption-with-vim"
 ---
 

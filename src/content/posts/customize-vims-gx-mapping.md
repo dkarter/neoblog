@@ -3,7 +3,11 @@ title: Customize Vim's gx mapping
 publishDate: 2021-02-28
 tags: [vim, elixir, npm, javascript]
 description: Extend Vim's gx mapping to open package pages directly from package.json and mix.exs files in your default browser.
-relatedPosts: ["jump-between-git-hunks-in-vim-with-vim-gitgutter", "simple-text-file-encryption-with-vim", "pretty-print-json-in-neovimvim-using-jq"]
+relatedPosts: [
+  "jump-between-git-hunks-in-vim-with-vim-gitgutter",
+  "simple-text-file-encryption-with-vim",
+  "pretty-print-json-in-neovimvim-using-jq",
+]
 ---
 
 One of my favorite Vim mappings is <kbd>g</kbd><kbd>x</kbd>. When hovering over a URL with the cursor in normal mode and using this mapping, Vim will open the URL under the cursor with your default browser.
@@ -41,6 +45,7 @@ augroup END
 ```
 
 ## Elixir: mix.exs + gx
+
 Thankfully there is an [Elixir plugin](https://github.com/lucidstack/hex.vim) that will allow us to open the hexdocs.pm page or Github page for the package under the cursor. All we have to do is set the mappings to activate whenever we are in a `mix.exs` file.
 
 First, make sure you install the plugin:
@@ -61,8 +66,8 @@ augroup END
 " }}}
 ```
 
-
 ## Bonus: VimPlug
+
 If you're using VimPlug as your Vim plugin manager, you can also get the <kbd>g</kbd><kbd>x</kbd> mapping to work inside Plug windows (like the one that opens when you update your plugins with `:PlugUpdate`). This code was originally posted in VimPlug's wiki (and was my inspiration for customizing gx for other scenarios), but I modified it so it also works inside my plugin definition file (`~/.vimrc.bundles`):
 
 ```vim

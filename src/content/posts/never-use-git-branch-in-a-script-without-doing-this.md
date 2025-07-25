@@ -6,7 +6,11 @@ publishDate: 2022-02-01
 tags: ["git", "scripting", "automation", "workflow", "fzf"]
 isDraft: false
 isFeatured: false
-relatedPosts: ["create-github-prs-from-jira-ticket", "delete-remote-git-branch-the-declarative-way", "what-does-that-git-alias-do"]
+relatedPosts: [
+  "create-github-prs-from-jira-ticket",
+  "delete-remote-git-branch-the-declarative-way",
+  "what-does-that-git-alias-do",
+]
 ---
 
 I like automating commands that I run often, and one of my favorite command line
@@ -82,9 +86,9 @@ Next time you use `git branch` in a script remember to use the `--format` flag t
 avoid a mess!
 
 [^1]: Maybe you think this is a contrived example because you can just type your
-      branch name and call it a day. But what if you use this command often and
-      your branch names are by convention long and annoying to type because they
-      contain a ticket number and the ticket title.
+    branch name and call it a day. But what if you use this command often and
+    your branch names are by convention long and annoying to type because they
+    contain a ticket number and the ticket title.
 
 [^2]: You may want to check out [this other alias I use to clean remotely deleted
-      branches locally](https://github.com/dkarter/dotfiles/blob/1862e076e0e3383aa5dad939c4b205f39a19175b/aliases#L94).
+    branches locally](https://github.com/dkarter/dotfiles/blob/1862e076e0e3383aa5dad939c4b205f39a19175b/aliases#L94).

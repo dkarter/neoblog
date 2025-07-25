@@ -6,7 +6,10 @@ tags: ["command-line"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/gcwwbqfmb1-pipe-all-output-from-a-command-stderr-stdout"
-relatedPosts: ["use-a-proxy-on-curlwget-commands", "whats-my-public-ip-automation-linux-terminal"]
+relatedPosts: [
+  "use-a-proxy-on-curlwget-commands",
+  "whats-my-public-ip-automation-linux-terminal",
+]
 ---
 
 When you write a bash/zsh script relying on pipes normally you will not be able to pipe through text from the stderr output with a normal pipe.

@@ -3,7 +3,10 @@ publishDate: 2019-08-23
 title: Pretty-Print JSON in NeoVim/Vim using jq
 tags: [vim]
 description: Pretty-print JSON in NeoVim/Vim using jq command line utility for processing and formatting JSON data.
-relatedPosts: ["pipe-text-into-vim-from-stdin", "whats-my-public-ip-automation-linux-terminal"]
+relatedPosts: [
+  "pipe-text-into-vim-from-stdin",
+  "whats-my-public-ip-automation-linux-terminal",
+]
 ---
 
 [I've written here before about how to pretty-print JSON in Vim](https://til.hashrocket.com/posts/5b4ce2484e-pretty-print-jsonhtml-in-vim) but since then I have found an even easier method using `jq`.

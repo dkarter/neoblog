@@ -17,5 +17,5 @@ To enable it:
 
 ![demo](/images/6WeMRJW.gif)
 
-And now refresh YouTube 
+And now refresh YouTube
 ![result](/images/ynFdxGr.gif)

@@ -9,8 +9,8 @@ To get the date for beginning of week for a date in moment you can use the `star
 
 ```javascript
 const today = moment();
-const from_date = today.startOf('week');
-const to_date = today.endOf('week');
+const from_date = today.startOf("week");
+const to_date = today.endOf("week");
 console.log({
   from_date: from_date.toString(),
   today: moment().toString(),
