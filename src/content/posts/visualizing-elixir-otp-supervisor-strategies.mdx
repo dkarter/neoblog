@@ -8,6 +8,8 @@ isFeatured: false
 relatedPosts: ["genserver-handlecontinue", "avoiding-data-loss-understanding-the-ondelete-option-in-elixir-migrations", "print-stacktrace-in-elixir-elixirlang"]
 ---
 
+import Mermaid from '@/components/blog/Mermaid.tsx';
+
 ## Introduction
 
 Seeking a hands-on way to further explore [Mermaid](https://mermaid.js.org/) — a remarkable JavaScript diagramming and charting tool — I decided to apply it to something familiar: visualizing OTP Supervisor strategies in Elixir. Mermaid's ability to render simple markup into great looking charts felt like an ideal fit for demonstrating these strategies.
@@ -28,8 +30,7 @@ A web server that needs to handle multiple client connections. If one connection
 
 #### Diagram
 
-```mermaid
-flowchart LR
+<Mermaid client:load code={`flowchart LR
   classDef default fill:white,stroke:green,stroke-width:1px
   classDef restarted fill:green,color:#fff
   classDef killed stroke:red,stroke-dasharray: 5 5
@@ -47,8 +48,7 @@ flowchart LR
     sa(Supervisor) --> ac(C)
   end
 
-BEFORE --> AFTER
-```
+BEFORE --> AFTER`} />
 
 <details>
   <summary>Mermaid Code</summary>
@@ -88,8 +88,7 @@ This strategy restarts all child processes when one of them fails. This is usefu
 
 #### Diagram
 
-```mermaid
-flowchart LR
+<Mermaid client:load code={`flowchart LR
   classDef default fill:white,stroke:green,stroke-width:1px
   classDef restarted fill:green,color:#fff
   classDef killed stroke:red,stroke-dasharray: 5 5
@@ -107,8 +106,7 @@ flowchart LR
     sa(Supervisor) --> ac(C):::restarted
   end
 
-BEFORE --> AFTER
-```
+BEFORE --> AFTER`} />
 
 <details>
   <summary>Mermaid Code</summary>
@@ -148,8 +146,7 @@ This strategy restarts the failed child process and all child processes that wer
 
 #### Diagram
 
-```mermaid
-flowchart LR
+<Mermaid client:load code={`flowchart LR
   classDef default fill:white,stroke:green,stroke-width:1px
   classDef restarted fill:green,color:#fff
   classDef killed stroke:red,stroke-dasharray: 5 5
@@ -167,8 +164,7 @@ flowchart LR
     sa(Supervisor) --> ac(C):::restarted
   end
 
-BEFORE --> AFTER
-```
+BEFORE --> AFTER`} />
 
 <details>
   <summary>Mermaid Code</summary>

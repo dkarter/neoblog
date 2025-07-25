@@ -22,5 +22,16 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ["mermaid"],
+    },
+    build: {
+      rollupOptions: {
+        external: [],
+      },
+    },
+    ssr: {
+      noExternal: ["mermaid"],
+    },
   },
 });
