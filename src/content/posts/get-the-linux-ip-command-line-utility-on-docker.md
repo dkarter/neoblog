@@ -4,6 +4,7 @@ description: "How to install the linux ip command line utility on slim Docker co
 publishDate: 2019-04-18
 tags: ["devops", "docker", "networking", "linux"]
 isDraft: false
+relatedPosts: ["get-ping-linux-command-on-docker", "no-ifconfig-on-linux", "how-does-dns-work"]
 ---
 
 Linux has a network utility called `ip` which can be very useful when debugging networking issues inside a docker machine.

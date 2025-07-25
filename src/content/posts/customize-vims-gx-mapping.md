@@ -3,6 +3,7 @@ title: Customize Vim's gx mapping
 publishDate: 2021-02-28
 tags: [vim, elixir, npm, javascript]
 description: Extend Vim's gx mapping to open package pages directly from package.json and mix.exs files in your default browser.
+relatedPosts: ["jump-between-git-hunks-in-vim-with-vim-gitgutter", "simple-text-file-encryption-with-vim", "pretty-print-json-in-neovimvim-using-jq"]
 ---
 
 One of my favorite Vim mappings is <kbd>g</kbd><kbd>x</kbd>. When hovering over a URL with the cursor in normal mode and using this mapping, Vim will open the URL under the cursor with your default browser.

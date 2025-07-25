@@ -3,6 +3,7 @@ title: Fix internet connection after reboot with ProtonVPN
 publishDate: 2021-12-26
 tags: [linux, vpn]
 description: Fix internet issues after reboot with ProtonVPN Kill Switch on Debian by removing virtual network devices.
+relatedPosts: ["no-ifconfig-on-linux", "get-only-pids-for-processes-listening-on-a-port"]
 ---
 
 If you're using ProtonVPN with the Kill Switch feature on a Debian based

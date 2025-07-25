@@ -3,6 +3,7 @@ title: Custom errors in JavaScript ⚠️
 publishDate: 2018-04-27
 tags: [javascript]
 description: Create custom error types in JavaScript by extending Error prototype for better error handling.
+relatedPosts: ["make-consolelog-stand-out-with-custom-css-style"]
 ---
 
 Javascript provides the ability to create custom errors by modifying the prototype of a function to the Error protorype. This is how one would create a custom error:

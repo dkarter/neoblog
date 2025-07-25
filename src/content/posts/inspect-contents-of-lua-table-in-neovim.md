@@ -4,6 +4,7 @@ description: "Learn how to use vim.inspect to debug and view the contents of Lua
 publishDate: 2022-04-21
 tags: ["neovim", "lua", "debugging"]
 isDraft: false
+relatedPosts: ["pretty-print-json-in-neovimvim-using-jq"]
 ---
 
 When using Lua inside of Neovim you may need to view the contents of Lua tables, which are a first class data structure in Lua world. Tables in Lua can represent ordinary arrays, lists, symbol tables, sets, records, graphs, trees, etc.

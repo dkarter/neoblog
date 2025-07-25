@@ -7,6 +7,7 @@ tags: ["command-line", "tools"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/kxvmdlrzh2-list-filenames-of-multiple-filetypes-in-project"
+relatedPosts: ["delete-all-nodemodules-dirs-recursively-with-find", "unraveling-homebrew-dependencies-a-handy-guide"]
 ---
 
 Ag (aka [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)) is an amazing piece of software. It allows you to define file types (like Ack) and comes prepackeged with some file types.

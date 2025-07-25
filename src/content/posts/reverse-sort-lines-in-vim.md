@@ -3,6 +3,7 @@ publishDate: 2018-11-03
 title: Reverse sort lines in Vim
 tags: [vim]
 description: Learn how to reverse sort lines in Vim using Linux's tail command for descending order sorting.
+relatedPosts: ["remove-duplicate-lines-in-vim", "pretty-print-json-in-neovimvim-using-jq", "treat-words-with-dash-as-a-word-in-vim"]
 ---
 
 Vim provides `sort` command for ordering lines in an ascending order, but what if you want to sort the lines in a reverse order?

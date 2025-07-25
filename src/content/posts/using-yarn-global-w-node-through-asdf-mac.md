@@ -5,6 +5,7 @@ publishDate: 2018-05-07
 tags: ["javascript", "yarn", "asdf", "node", "macos"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["install-node-modules-in-subdir-without-a-cd", "delete-all-nodemodules-dirs-recursively-with-find"]
 ---
 
 The asdf version manager is an awesome tool for managing many different language runtime versions. I recently started using it for Node and noticed that `yarn global` no longer plays nice with it.

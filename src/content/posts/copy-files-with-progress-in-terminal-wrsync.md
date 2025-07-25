@@ -3,6 +3,7 @@ publishDate: 2018-08-05
 title: Copy files with progress in terminal w/rsync
 tags: [command-line]
 description: Use rsync with progress indicators for large data transfers with visual feedback on speed and time.
+relatedPosts: ["whats-my-public-ip-automation-linux-terminal", "use-pgrep-and-xargs-to-kill-processes-zsh-bash"]
 ---
 
 When you need to transfer a lot of files from one location to another it's sometimes useful to have some progress indication and maybe even a speed measure, or time remaining.

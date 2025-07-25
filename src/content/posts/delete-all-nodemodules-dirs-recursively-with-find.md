@@ -3,6 +3,7 @@ title: Delete all node_modules dirs recursively with find
 publishDate: 2018-04-21
 tags: [command-line]
 description: Save disk space by recursively deleting node_modules directories using find command for JavaScript cleanup.
+relatedPosts: ["list-filenames-of-multiple-filetypes-in-project", "use-pgrep-and-xargs-to-kill-processes-zsh-bash"]
 ---
 
 If you have hundreds of past JavaScript projects sitting in your workspace folder, you probably also have hundreds of `node_modules` folders nested inside of them, and hundreds of thousands actual npm modules resting peacefully in those.

@@ -5,6 +5,7 @@ publishDate: 2017-12-26
 tags: ["vim", "editor"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["reverse-sort-lines-in-vim", "remove-duplicate-lines-in-vim", "customize-vims-gx-mapping"]
 ---
 
 By default vim treats two words connected with an underscore e.g. `search_tag` as a vim word text-object.

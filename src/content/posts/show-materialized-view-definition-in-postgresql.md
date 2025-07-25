@@ -5,6 +5,7 @@ publishDate: 2018-05-31T20:00:15Z
 tags: ["sql"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["quick-syntax-reference-for-sql-directly-in-psql", "list-all-available-extensions-in-postgres", "case-insensitive-in-query-in-postgres-psql"]
 canonicalUrl: "https://til.hashrocket.com/posts/gh42hxndbm-show-materialized-view-definition-in-postgresql"
 ---
 

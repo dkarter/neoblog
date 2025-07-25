@@ -3,6 +3,7 @@ publishDate: 2021-02-24
 title: Create Github PRs from a Jira Ticket
 tags: [workflow, automation, jira, fzf, github]
 description: Terminal function to auto-generate GitHub PRs from Jira tickets using FZF, Jira CLI, and GitHub CLI.
+relatedPosts: ["what-does-that-git-alias-do", "whats-my-public-ip-automation-linux-terminal"]
 ---
 
 TL; DR: add this function to your `.bashrc`/`.zshrc` to create a PR from a Jira ticket:

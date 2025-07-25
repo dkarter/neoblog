@@ -4,6 +4,7 @@ description: "Essential macOS keyboard shortcuts to hide windows and reduce desk
 publishDate: 2018-05-31
 tags: ["macos", "workflow", "productivity"]
 isDraft: false
+relatedPosts: ["unraveling-homebrew-dependencies-a-handy-guide", "using-yarn-global-w-node-through-asdf-mac"]
 ---
 
 Sometimes your desktop gets cluttered with windows of different running applications which makes it difficult to concetrate on the task at hand. 

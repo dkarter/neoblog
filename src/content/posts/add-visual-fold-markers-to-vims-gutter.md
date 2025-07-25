@@ -3,6 +3,7 @@ title: "Add visual fold markers to Vim's gutter"
 description: Display visual fold markers in Vim's gutter using foldcolumn for better code folding visualization
 tags: [vim]
 publishDate: 2020-01-06
+relatedPosts: ["vim-peek-horizontally-without-moving-the-cursor", "jump-between-git-hunks-in-vim-with-vim-gitgutter", "customize-vims-gx-mapping"]
 ---
 
 TIL that you can display visual fold markers in Vim's gutter by setting the `foldcolumn`!

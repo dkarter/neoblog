@@ -6,6 +6,7 @@ tags: ["vim"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/akcktdrn1t-pipe-text-into-vim-from-stdin"
+relatedPosts: ["pretty-print-json-in-neovimvim-using-jq", "remove-duplicate-lines-in-vim"]
 ---
 
 You can pipe text into vim directly from stdin. This can be helpful if you want to edit the output of a long bash command, or if you want to see what an installation script contains before piping it into bash.

@@ -3,6 +3,7 @@ title: Make console.log stand out with custom css style
 publishDate: 2017-10-18
 tags: [javascript]
 description: Style console.log messages with custom CSS to make them stand out in browser console for debugging.
+relatedPosts: ["custom-errors-in-javascript", "the-paste-event-in-browsers"]
 ---
 
 I know your browser console is full of messages because you are debugging something, and that creates a lot of noise. Now you are adding a new console.log, and you need it to stand out above the rest.

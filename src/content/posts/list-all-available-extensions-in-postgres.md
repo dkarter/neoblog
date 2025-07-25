@@ -7,6 +7,7 @@ tags: ["sql", "postgres"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/84gq2ppkgu-list-all-available-extensions-in-postgres"
+relatedPosts: ["case-insensitive-in-query-in-postgres-psql", "show-materialized-view-definition-in-postgresql", "quick-syntax-reference-for-sql-directly-in-psql"]
 ---
 
 Postgres comes packed with extensions just waiting to be enabled!

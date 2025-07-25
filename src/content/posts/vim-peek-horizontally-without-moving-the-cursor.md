@@ -3,6 +3,7 @@ title: "Vim: Peek horizontally without moving the cursor"
 description: Learn how to scroll horizontally in Vim without moving the cursor using zs and ze mappings for better code navigation
 tags: [vim]
 publishDate: 2018-06-11
+relatedPosts: ["reverse-sort-lines-in-vim", "remove-duplicate-lines-in-vim", "treat-words-with-dash-as-a-word-in-vim"]
 ---
 
 Some people like wordwrapping in Vim. Personally I find it annoying for code because it can destroy the meaning of the code in the context that it was formatted in by the original author, making it hard to understand where one line begins and ends. 

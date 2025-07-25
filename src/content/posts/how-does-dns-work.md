@@ -4,6 +4,7 @@ description: "Comprehensive DNS guide covering how it works, privacy concerns, s
 publishDate: 2022-01-30
 tags: ["networking", "dns", "security", "privacy"]
 isDraft: false
+relatedPosts: ["whats-my-public-ip-automation-linux-terminal", "get-the-linux-ip-command-line-utility-on-docker"]
 ---
 
 ## (Maybe Obvious) Preamble

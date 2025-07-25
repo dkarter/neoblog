@@ -3,6 +3,7 @@ title: Delete lines from file with sed
 publishDate: 2019-05-03
 tags: [command-line]
 description: Delete specific lines from files using sed with regex, including in-place editing and backup options.
+relatedPosts: ["pipe-all-output-from-a-command-stderr-stdout", "stop-bash-script-on-error-linux-zsh"]
 ---
 
 Imagine the following file:

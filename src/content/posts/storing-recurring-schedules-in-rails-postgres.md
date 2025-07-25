@@ -5,6 +5,7 @@ publishDate: 2017-10-18
 tags: ["rails", "postgres", "database"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["case-insensitive-in-query-in-postgres-psql"]
 ---
 
 If you have a scheduling component to your Rails application you may need to store the day of week and time of day in the database.

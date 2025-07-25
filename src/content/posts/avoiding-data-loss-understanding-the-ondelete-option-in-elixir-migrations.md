@@ -3,6 +3,7 @@ title: "Understanding :on_delete Option in Elixir Migrations"
 description: How to use on_delete option in Ecto migrations to prevent orphaned data and database inconsistencies.
 tags: [elixir, ecto, postgres, sqlite, database]
 publishDate: 2023-01-22
+relatedPosts: ["visualizing-elixir-otp-supervisor-strategies", "genserver-handlecontinue"]
 ---
 
 When working with Elixir and Ecto, it is crucial to fully understand the

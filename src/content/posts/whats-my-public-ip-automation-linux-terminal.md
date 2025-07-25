@@ -5,6 +5,7 @@ publishDate: 2020-02-05
 tags: ["command-line", "automation", "linux", "terminal", "networking"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["use-a-proxy-on-curlwget-commands", "no-ifconfig-on-linux", "pretty-print-json-in-neovimvim-using-jq"]
 ---
 
 Ever wonder what your public IP looks like? When I do, I usually [search duckduckgo.com for "what's my ip"](https://duckduckgo.com/?q=what%27s+my+ip) and it is nice enough to tell me that at the top above the search results.

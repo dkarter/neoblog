@@ -6,6 +6,7 @@ publishDate: 2022-02-01
 tags: ["git", "scripting", "automation", "workflow", "fzf"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["create-github-prs-from-jira-ticket", "delete-remote-git-branch-the-declarative-way", "what-does-that-git-alias-do"]
 ---
 
 I like automating commands that I run often, and one of my favorite command line

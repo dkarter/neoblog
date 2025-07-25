@@ -3,6 +3,7 @@ title: Quick syntax reference for SQL directly in psql
 publishDate: 2018-02-18
 tags: [sql]
 description: Access SQL command syntax documentation directly in psql using \h command for productive terminal-based development.
+relatedPosts: ["show-materialized-view-definition-in-postgresql", "list-all-available-extensions-in-postgres", "case-insensitive-in-query-in-postgres-psql"]
 ---
 
 Whenever I forget the syntax for a certain SQL command in Posgres I usually reach for [Dash](https://kapeli.com/dash) or simply search DuckDuckGo for the the specific command. That usually yields the Postgres official documentation website which is great...

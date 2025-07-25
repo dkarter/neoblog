@@ -5,6 +5,7 @@ publishDate: 2018-04-17
 tags: ["command-line", "curl", "wget", "proxy", "debugging"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["whats-my-public-ip-automation-linux-terminal", "pipe-all-output-from-a-command-stderr-stdout"]
 ---
 
 Using a proxy can be a good way to debug http issues. Unfortunately setting the proxy on macOS globally does not apply to all command line utilities.

@@ -3,6 +3,7 @@ title: Delete remote git branch - the declarative way
 publishDate: 2019-01-18
 tags: [git]
 description: Delete remote git branches declaratively using --delete flag instead of cryptic colon syntax.
+relatedPosts: ["never-use-git-branch-in-a-script-without-doing-this", "what-does-that-git-alias-do"]
 ---
 
 Cleaning up after yourself is important, and not just in real life. Good _Git Hygiene™_ goes a long way.

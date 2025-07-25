@@ -3,6 +3,7 @@ title: GenServer handle_continue/2
 publishDate: 2022-03-20
 tags: [elixir]
 description: GenServer handle_continue callback for async initialization and avoiding blocking operations in init.
+relatedPosts: ["visualizing-elixir-otp-supervisor-strategies", "serve-phoenix-app-locally-with-https", "get-a-writable-temporary-directory-in-elixir"]
 ---
 
 I recently learned about a delightful new(ish) feature in Elixir's GenServer that

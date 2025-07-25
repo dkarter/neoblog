@@ -5,6 +5,7 @@ publishDate: 2019-08-20T15:11:04Z
 tags: ["elixir"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["genserver-handlecontinue", "get-a-writable-temporary-directory-in-elixir", "get-applications-current-version-in-production"]
 canonicalUrl: "https://til.hashrocket.com/posts/b8p5oalouz--serve-phoenix-app-locally-with-https-"
 ---
 

@@ -3,6 +3,7 @@ title: "Debugging: Elm evaluates uncalled `let` variables"
 publishDate: 2019-09-20
 tags: [elm]
 description: Elm evaluates let expression variables even when uncalled, useful for debugging without modifying function bodies.
+relatedPosts: ["print-stacktrace-in-elixir-elixirlang"]
 ---
 
 If you write a function that has a `let` expression variables like so:

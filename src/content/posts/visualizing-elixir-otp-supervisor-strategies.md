@@ -5,6 +5,7 @@ publishDate: 2023-06-16
 tags: ["elixir", "otp", "mermaid", "supervisors"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["genserver-handlecontinue", "avoiding-data-loss-understanding-the-ondelete-option-in-elixir-migrations", "print-stacktrace-in-elixir-elixirlang"]
 ---
 
 ## Introduction

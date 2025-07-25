@@ -7,6 +7,7 @@ tags: ["command-line", "linux"]
 isDraft: false
 isFeatured: false
 canonicalUrl: "https://til.hashrocket.com/posts/5cuii1iosi-no-ifconfig-on-linux"
+relatedPosts: ["get-the-linux-ip-command-line-utility-on-docker", "get-ping-linux-command-on-docker", "whats-my-public-ip-automation-linux-terminal"]
 ---
 
 If you are on a Linux machine and trying to run `ifconfig` you may get `Command not found: ifconfig`. That is because some Linux distros don't come with it bundled by default.

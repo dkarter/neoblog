@@ -5,6 +5,7 @@ publishDate: 2020-01-21
 tags: ["command-line", "bash", "zsh", "process-management"]
 isDraft: false
 isFeatured: false
+relatedPosts: ["get-only-pids-for-processes-listening-on-a-port", "stop-bash-script-on-error-linux-zsh", "whatis-command-and-apropos-in-linux-bash"]
 ---
 
 Have you ever found yourself doing this:

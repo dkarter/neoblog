@@ -4,6 +4,7 @@ description: "Use npm --prefix to install node modules in subdirs without cd, pe
 publishDate: 2019-02-01
 tags: ["javascript", "npm", "workflow", "docker"]
 isDraft: false
+relatedPosts: ["using-yarn-global-w-node-through-asdf-mac"]
 ---
 
 So yea you don't need a friend to send you a CD-ROM anymore to install node modules. You can use the World Wide Web! Pretty exciting.

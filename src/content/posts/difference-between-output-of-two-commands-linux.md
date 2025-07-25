@@ -3,6 +3,7 @@ title: Difference between output of two commands #linux
 publishDate: 2018-03-10
 tags: [command-line]
 description: Compare output of two Linux commands without temp files using process substitution and diff.
+relatedPosts: ["pipe-all-output-from-a-command-stderr-stdout", "list-filenames-of-multiple-filetypes-in-project"]
 ---
 
 Recently I've been playing around with ripgrep (rg) which is a tool similar to Ack and Ag, but faster than both (and written in Rust FWIW).

@@ -3,6 +3,7 @@ publishDate: 2023-09-09
 title: Country codes to flag emoji in Elixir
 tags: [elixir]
 description: Convert country code strings to flag emojis in Elixir using Unicode regional characters and stdlib functions.
+relatedPosts: ["get-last-nth-elements-from-enumerable-in-elixir", "get-a-writable-temporary-directory-in-elixir", "print-stacktrace-in-elixir-elixirlang"]
 ---
 
 I just read [this blog post](https://dev.to/jorik/country-code-to-flag-emoji-a21).
